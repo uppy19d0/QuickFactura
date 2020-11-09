@@ -1,0 +1,55 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h1>Registro</h1>
+<center>
+    <img class="rounded-Thumbnail" height="180" width="180"
+         asp-append-version="true" src="/Images/register_icon.jpg" />
+
+    <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div>
+            <h3 style="font-weight:bold; color:blue">Sistema para Secreto</h3>
+        </div>
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-12 row">
+            <label asp-for="Input.Email"></label>
+            <input asp-for="Input.Email" class="form-control col-12" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+        @*<div class="col-12 row">
+            <label asp-for="Input.Nombres"></label>
+            <input asp-for="Input.Nombres" class="form-control col-12" />
+            <span asp-validation-for="Input.Nombres" class="text-danger"></span>
+        </div>*@
+        @*<div class="col-12 row">
+            <label asp-for="Input.Color"></label>
+            <input asp-for="Input.Color" class="form-control col-12" type="color" />
+            <span asp-validation-for="Input.Color" class="text-danger"></span>
+        </div>*@
+        <div class="col-12 row">
+            <label asp-for="Input.Password"></label>
+            <input asp-for="Input.Password" class="form-control col-12" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+        <div class="col-12 row">
+            <label asp-for="Input.ConfirmPassword"></label>
+            <input asp-for="Input.ConfirmPassword" class="form-control col-12" />
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+        </div>
+        <br /><br />
+        <button type="submit" class="btn btn-primary  btn-lg">Crear</button>
+        <div class="col-12 row">
+            <span class="col-12">
+                <a href="/Identity/Account/Login" class="col-6">Ya tiene un Usuario?</a>
+            </span>
+        </div>
+    </form>
+
+</center>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

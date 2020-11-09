@@ -1,0 +1,42 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h1>@ViewData["Title"]</h1>
+<center>
+    <img class="rounded-Thumbnail" height="180" width="180"
+         asp-append-version="true" src="/Images/icon_login.jpg" />
+    <form id="account" method="post">
+        <div>
+            <h3 style="font-weight:bold; color:blue">Sistema para Secreto</h3>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-12 row">
+            <label asp-for="Input.Email"></label>
+            <input asp-for="Input.Email" class="form-control" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+        <div class="col-12 row">
+            <label asp-for="Input.Password"></label>
+            <input asp-for="Input.Password" class="form-control" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+        <br /><br />
+        <button type="submit" class="btn btn-primary  btn-lg">Entrar</button>
+
+        <div class="col-12 row">
+            <span class="col-12">
+                <a href="/Identity/Account/Register" class="col-6">Creamer una cuenta</a>
+            </span>
+        </div>
+
+    </form>
+
+</center>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
