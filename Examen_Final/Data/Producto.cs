@@ -12,6 +12,7 @@ namespace Examen_Final.Data
         public string Nombre { get; set; }
 
         public string Descripcion { get; set; }
+        public string img { get; set; }
 
         public double Precio { get; set; }
 

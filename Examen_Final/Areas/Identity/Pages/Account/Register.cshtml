@@ -11,7 +11,7 @@
 
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
         <div>
-            <h3 style="font-weight:bold; color:blue">Sistema para Secreto</h3>
+            <h3 style="font-weight:bold; color:blue">Sistema Tienda</h3>
         </div>
         <hr />
         <div asp-validation-summary="All" class="text-danger"></div>
@@ -20,16 +20,42 @@
             <input asp-for="Input.Email" class="form-control col-12" />
             <span asp-validation-for="Input.Email" class="text-danger"></span>
         </div>
-        @*<div class="col-12 row">
+        <div class="col-12 row">
             <label asp-for="Input.Nombres"></label>
             <input asp-for="Input.Nombres" class="form-control col-12" />
             <span asp-validation-for="Input.Nombres" class="text-danger"></span>
-        </div>*@
-        @*<div class="col-12 row">
-            <label asp-for="Input.Color"></label>
-            <input asp-for="Input.Color" class="form-control col-12" type="color" />
-            <span asp-validation-for="Input.Color" class="text-danger"></span>
-        </div>*@
+        </div>
+        <div class="col-12 row">
+            <label asp-for="Input.Telefono"></label>
+            <input asp-for="Input.Telefono" class="form-control col-12" type="phone" />
+            <span asp-validation-for="Input.Telefono" class="text-danger"></span>
+        </div>
+        <br/>
+
+        <div class="col-12 row">
+            <label asp-for="Input.Documento_Identidad"></label>
+            <input asp-for="Input.Documento_Identidad" class="form-control col-12" type="text"/>
+            <span asp-validation-for="Input.Documento_Identidad" class="text-danger"></span>
+        </div>
+   
+       
+         <div class="col-12 row">
+            <label asp-for="Input.Nombre_Comercial"></label>
+            <input asp-for="Input.Nombre_Comercial" class="form-control col-12" type="text"/>
+            <span asp-validation-for="Input.Nombre_Comercial" class="text-danger"></span>
+        </div>
+        <div class="col-12 row">
+            <label asp-for="Input.Direccion"></label>
+            <input asp-for="Input.Direccion" class="form-control col-12" type="text" />
+            <span asp-validation-for="Input.Direccion" class="text-danger"></span>
+        </div>
+         <div class="col-12 row">
+            <label asp-for="Input.WebSite"></label>
+            <input asp-for="Input.WebSite" class="form-control col-12" type=text/>
+            <span asp-validation-for="Input.WebSite" class="text-danger"></span>
+        </div>
+
+        @* LA CLAVE *@
         <div class="col-12 row">
             <label asp-for="Input.Password"></label>
             <input asp-for="Input.Password" class="form-control col-12" />
@@ -53,3 +79,20 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
+
+@* <script>
+function onClickHandler(){
+    var chk=document.getElementById("box").value;
+  
+  if(document.getElementById("rnc").hidden == true){
+    document.getElementById("rnc").hidden = false;
+    document.getElementById("cedula").hidden = true;
+  }
+  else{
+      document.getElementById("rnc").hidden = true;
+      document.getElementById("cedula").hidden = false;
+  }
+
+}
+</script> *@

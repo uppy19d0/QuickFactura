@@ -1,12 +1,36 @@
-﻿<AuthorizeView>
+﻿@using Data
+@using Microsoft.AspNetCore.Identity
+
+@inject NavigationManager NavigationManager
+@inject ServiceUsuario service
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+@inject IHttpContextAccessor httpContextAccessor
+
+<AuthorizeView>
     <Authorized>
-        <a href="Identity/Account/Manage">Hello, @context.User.Identity.Name!</a>
+        <a>Correo: @usuario1.Email</a>
         <form method="post" action="Identity/Account/LogOut">
-            <button type="submit" class="nav-link btn btn-link">Log out</button>
+            <button type="submit" class="nav-link btn btn-link">Salir</button>
         </form>
     </Authorized>
     <NotAuthorized>
-        <a href="Identity/Account/Register">Register</a>
+        <a href="Identity/Account/Register">Registrar</a>
         <a href="Identity/Account/Login">Log in</a>
     </NotAuthorized>
 </AuthorizeView>
+
+@code {
+    public string name_search;
+    Usuario usuario1;
+    protected override async Task OnInitializedAsync()
+    {
+        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+        await Refresh();
+    }
+    private async Task Refresh()
+    {
+        usuario1 = await service.getInformation(name_search);
+    }
+
+}

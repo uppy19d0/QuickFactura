@@ -59,11 +59,8 @@ namespace Examen_Final.Areas.Identity.Pages.Account
             [Display(Name = "Telefono")]
             public string Telefono { get; set; }
 
-            [Display(Name = "RNC")]
-            public string RNC { get; set; }
-
-            [Display(Name = "Cedula")]
-            public string Cedula { get; set; }
+            [Display(Name = "Documento Identidad")]
+            public string Documento_Identidad { get; set; }
 
             [Display(Name = "Nombre Comercial")]
             public string Nombre_Comercial { get; set; }
@@ -99,7 +96,7 @@ namespace Examen_Final.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Usuario { Nombres = Input.Nombres, UserName = Input.Email, Email = Input.Email };
+                var user = new Usuario { Nombres = Input.Nombres, UserName = Input.Documento_Identidad, Email = Input.Email,Documento_Identidad=Input.Documento_Identidad,Telefono=Input.Telefono,Nombre_Comercial=Input.Nombre_Comercial,Direccion=Input.Direccion,WebSite=Input.WebSite };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

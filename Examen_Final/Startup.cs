@@ -33,6 +33,7 @@ namespace Examen_Final
             services.AddDefaultIdentity<Usuario>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+            services.AddScoped<ServiceUsuario>();
             services.AddScoped<ServiceCliente>();
             services.AddScoped<ServiceFactura>();
             services.AddScoped<ServiceProducto>();

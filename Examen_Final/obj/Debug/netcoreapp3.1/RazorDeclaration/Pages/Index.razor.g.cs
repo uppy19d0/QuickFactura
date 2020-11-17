@@ -76,6 +76,27 @@ using Examen_Final.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+using Microsoft.AspNetCore.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+using BlazorInputFile;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {

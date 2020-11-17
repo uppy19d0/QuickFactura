@@ -9,14 +9,54 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Examen_Final.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201109224634_creationModels")]
-    partial class creationModels
+    [Migration("20201117033113_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.9");
+
+            modelBuilder.Entity("Examen_Final.Data.Cliente", b =>
+                {
+                    b.Property<int>("ClienteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Apellido1")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Apellido2")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Cedula")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Correo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Foto")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Lat")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Long")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Telefono")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClienteId");
+
+                    b.ToTable("clientes");
+                });
 
             modelBuilder.Entity("Examen_Final.Data.Factura", b =>
                 {
@@ -49,6 +89,9 @@ namespace Examen_Final.Migrations
 
                     b.Property<bool>("Servicio")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("img")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("ProductoID");
 
@@ -261,10 +304,10 @@ namespace Examen_Final.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("Cedula")
+                    b.Property<string>("Direccion")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Direccion")
+                    b.Property<string>("Documento_Identidad")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nombre_Comercial")
@@ -272,9 +315,6 @@ namespace Examen_Final.Migrations
 
                     b.Property<string>("Nombres")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RNC")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Telefono")

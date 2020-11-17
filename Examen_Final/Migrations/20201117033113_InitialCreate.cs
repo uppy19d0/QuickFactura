@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Examen_Final.Migrations
 {
-    public partial class creationModels : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,16 +43,36 @@ namespace Examen_Final.Migrations
                     Discriminator = table.Column<string>(nullable: false),
                     UsuarioId = table.Column<int>(nullable: true),
                     Nombres = table.Column<string>(nullable: true),
-                    Cedula = table.Column<string>(nullable: true),
+                    Documento_Identidad = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
                     WebSite = table.Column<string>(nullable: true),
-                    RNC = table.Column<string>(nullable: true),
                     Nombre_Comercial = table.Column<string>(nullable: true),
                     Direccion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "clientes",
+                columns: table => new
+                {
+                    ClienteId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nombres = table.Column<string>(nullable: false),
+                    Apellido1 = table.Column<string>(nullable: true),
+                    Apellido2 = table.Column<string>(nullable: true),
+                    Foto = table.Column<string>(nullable: true),
+                    Cedula = table.Column<string>(nullable: false),
+                    Lat = table.Column<string>(nullable: true),
+                    Long = table.Column<string>(nullable: true),
+                    Telefono = table.Column<string>(nullable: true),
+                    Correo = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_clientes", x => x.ClienteId);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,6 +95,7 @@ namespace Examen_Final.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Nombre = table.Column<string>(nullable: true),
                     Descripcion = table.Column<string>(nullable: true),
+                    img = table.Column<string>(nullable: true),
                     Precio = table.Column<double>(nullable: false),
                     Servicio = table.Column<bool>(nullable: false),
                     Cantidad = table.Column<double>(nullable: false)
@@ -244,6 +265,9 @@ namespace Examen_Final.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "clientes");
 
             migrationBuilder.DropTable(
                 name: "facturas");

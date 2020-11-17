@@ -19,13 +19,12 @@ namespace Examen_Final.Data
 
         //public string Foto { get; set; }
 
-        public string Cedula { get; set; }
+        public string Documento_Identidad { get; set; }
 
         public string Telefono { get; set; }
 
         public string WebSite { get; set; }
 
-        public string RNC { get; set; }
 
         public string Nombre_Comercial { get; set; }
 

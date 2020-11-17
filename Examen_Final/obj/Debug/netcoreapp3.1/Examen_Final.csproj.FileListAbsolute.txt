@@ -206,3 +206,12 @@ C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Ra
 C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Producto\Productos.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Producto\Productos.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Cliente\Cliente.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Factura\Factura.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Reporte\Reporte.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Cliente\Cliente.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Factura\Factura.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Reporte\Reporte.razor.g.cs
+C:\Users\luis_\source\repos\Examen_Final\Examen_Final\bin\Debug\netcoreapp3.1\BlazorInputFile.dll

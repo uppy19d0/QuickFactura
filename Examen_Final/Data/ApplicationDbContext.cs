@@ -11,6 +11,7 @@ namespace Examen_Final.Data
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<Producto> productos { get; set; }
         public DbSet<Factura> facturas { get; set; }
+        public DbSet<Cliente> clientes { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
