@@ -58,13 +58,11 @@ namespace Examen_Final.Migrations
                 name: "clientes",
                 columns: table => new
                 {
-                    ClienteId = table.Column<int>(nullable: false)
+                    ClienteID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nombres = table.Column<string>(nullable: false),
-                    Apellido1 = table.Column<string>(nullable: true),
-                    Apellido2 = table.Column<string>(nullable: true),
                     Foto = table.Column<string>(nullable: true),
-                    Cedula = table.Column<string>(nullable: false),
+                    Rnc = table.Column<string>(nullable: false),
                     Lat = table.Column<string>(nullable: true),
                     Long = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
@@ -72,7 +70,7 @@ namespace Examen_Final.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_clientes", x => x.ClienteId);
+                    table.PrimaryKey("PK_clientes", x => x.ClienteID);
                 });
 
             migrationBuilder.CreateTable(

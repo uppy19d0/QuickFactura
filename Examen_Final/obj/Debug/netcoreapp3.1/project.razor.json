@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Examen_Final.csproj",
+  "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Examen_Final.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -12,68 +12,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -175132148,
+        "HashCode": 1070311947,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Index",
+        "Name": "Examen_Final.App",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Index"
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Index"
+          "Common.TypeName": "Examen_Final.App"
         }
       },
       {
-        "HashCode": -1952795237,
+        "HashCode": -1689137301,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Index",
+        "Name": "Examen_Final.App",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Examen_Final.Pages.Index"
+            "TagName": "Examen_Final.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Index",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -285798288,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Cliente.Cliente",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Cliente"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Cliente.Cliente"
-        }
-      },
-      {
-        "HashCode": 1774886012,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Cliente.Cliente",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Cliente.Cliente"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Cliente.Cliente",
+          "Common.TypeName": "Examen_Final.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -107,6 +74,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Examen_Final.Pages.Factura.Factura",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -175132148,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Index",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Index"
+        }
+      },
+      {
+        "HashCode": -1952795237,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Index",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Index",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -173,6 +173,72 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Examen_Final.Pages.Producto.Productos",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1257347574,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.Clientes",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Clientes"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes"
+        }
+      },
+      {
+        "HashCode": -640671258,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.Clientes",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Cliente.Clientes"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1118605737,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.LoginDisplay",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "LoginDisplay"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.LoginDisplay"
+        }
+      },
+      {
+        "HashCode": 729790800,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.LoginDisplay",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Shared.LoginDisplay"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.LoginDisplay",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -273,39 +339,6 @@
         }
       },
       {
-        "HashCode": -1118605737,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.LoginDisplay",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "LoginDisplay"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.LoginDisplay"
-        }
-      },
-      {
-        "HashCode": 729790800,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.LoginDisplay",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Shared.LoginDisplay"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.LoginDisplay",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -100529733,
         "Kind": "Components.Component",
         "Name": "Examen_Final.Shared.NavMenu",
@@ -392,35 +425,105 @@
         }
       },
       {
-        "HashCode": 1070311947,
+        "HashCode": 1278003042,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
-        "AssemblyName": "Examen_Final",
+        "Name": "BlazorInputFile.InputFile",
+        "AssemblyName": "BlazorInputFile",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "InputFile"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "UnmatchedParameters",
+            "TypeName": "System.Collections.Generic.Dictionary<System.String, System.Object>",
+            "Metadata": {
+              "Common.PropertyName": "UnmatchedParameters"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnChange",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<BlazorInputFile.IFileListEntry[]>",
+            "Metadata": {
+              "Common.PropertyName": "OnChange",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "MaxMessageSize",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "MaxMessageSize"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "MaxBufferSize",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "MaxBufferSize"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App"
+          "Common.TypeName": "BlazorInputFile.InputFile"
         }
       },
       {
-        "HashCode": -1689137301,
+        "HashCode": 433562754,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
-        "AssemblyName": "Examen_Final",
+        "Name": "BlazorInputFile.InputFile",
+        "AssemblyName": "BlazorInputFile",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Examen_Final.App"
+            "TagName": "BlazorInputFile.InputFile"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "UnmatchedParameters",
+            "TypeName": "System.Collections.Generic.Dictionary<System.String, System.Object>",
+            "Metadata": {
+              "Common.PropertyName": "UnmatchedParameters"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnChange",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<BlazorInputFile.IFileListEntry[]>",
+            "Metadata": {
+              "Common.PropertyName": "OnChange",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "MaxMessageSize",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "MaxMessageSize"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "MaxBufferSize",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "MaxBufferSize"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App",
+          "Common.TypeName": "BlazorInputFile.InputFile",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -3255,109 +3358,6 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "Microsoft.AspNetCore.Components.Routing.NavLink.ChildContent",
           "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1278003042,
-        "Kind": "Components.Component",
-        "Name": "BlazorInputFile.InputFile",
-        "AssemblyName": "BlazorInputFile",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "InputFile"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "UnmatchedParameters",
-            "TypeName": "System.Collections.Generic.Dictionary<System.String, System.Object>",
-            "Metadata": {
-              "Common.PropertyName": "UnmatchedParameters"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnChange",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<BlazorInputFile.IFileListEntry[]>",
-            "Metadata": {
-              "Common.PropertyName": "OnChange",
-              "Components.EventCallback": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "MaxMessageSize",
-            "TypeName": "System.Int32",
-            "Metadata": {
-              "Common.PropertyName": "MaxMessageSize"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "MaxBufferSize",
-            "TypeName": "System.Int32",
-            "Metadata": {
-              "Common.PropertyName": "MaxBufferSize"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorInputFile.InputFile"
-        }
-      },
-      {
-        "HashCode": 433562754,
-        "Kind": "Components.Component",
-        "Name": "BlazorInputFile.InputFile",
-        "AssemblyName": "BlazorInputFile",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "BlazorInputFile.InputFile"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "UnmatchedParameters",
-            "TypeName": "System.Collections.Generic.Dictionary<System.String, System.Object>",
-            "Metadata": {
-              "Common.PropertyName": "UnmatchedParameters"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnChange",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<BlazorInputFile.IFileListEntry[]>",
-            "Metadata": {
-              "Common.PropertyName": "OnChange",
-              "Components.EventCallback": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "MaxMessageSize",
-            "TypeName": "System.Int32",
-            "Metadata": {
-              "Common.PropertyName": "MaxMessageSize"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "MaxBufferSize",
-            "TypeName": "System.Int32",
-            "Metadata": {
-              "Common.PropertyName": "MaxBufferSize"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorInputFile.InputFile",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -14908,128 +14908,128 @@
   "RootNamespace": "Examen_Final",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Cliente\\Cliente.razor",
-      "TargetPath": "Pages\\Cliente\\Cliente.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Shared\\LoginDisplay.razor",
-      "TargetPath": "Shared\\LoginDisplay.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Factura\\Factura.razor",
-      "TargetPath": "Pages\\Factura\\Factura.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\_Imports.razor",
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Shared\\MainLayout.razor",
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Shared\\MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Index.razor",
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Reporte\\Reporte.razor",
-      "TargetPath": "Pages\\Reporte\\Reporte.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Producto\\Productos.razor",
-      "TargetPath": "Pages\\Producto\\Productos.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\App.razor",
-      "TargetPath": "App.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\_Host.cshtml",
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Reporte\\Reporte.razor",
+      "TargetPath": "Pages\\Reporte\\Reporte.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Shared\\LoginDisplay.razor",
+      "TargetPath": "Shared\\LoginDisplay.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Factura\\Factura.razor",
+      "TargetPath": "Pages\\Factura\\Factura.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Producto\\Productos.razor",
+      "TargetPath": "Pages\\Producto\\Productos.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Shared\\_Layout.cshtml",
+      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Cliente\\Clientes.razor",
+      "TargetPath": "Pages\\Cliente\\Clientes.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -29,13 +29,13 @@ namespace Examen_Final.Data
         {
             try
             {
-               var path = Path.Combine(_webHostEnvironment.ContentRootPath,"./wwwroot/img",file.Name);
+               var path = Path.Combine(_webHostEnvironment.ContentRootPath,"./wwwroot/Productos",file.Name);
                var streamwriter = new MemoryStream();
                await file.Data.CopyToAsync(streamwriter);
                 FileStream files=new FileStream(path,FileMode.Create,FileAccess.Write);
                 {
                     streamwriter.WriteTo(files);
-                    producto.img =path.Substring(path.LastIndexOf("img"));
+                    producto.img =path.Substring(path.LastIndexOf("Productos"));
                 }
                 _dbContext.productos.Add(producto);
                 await _dbContext.SaveChangesAsync();

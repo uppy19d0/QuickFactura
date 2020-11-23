@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Examen_Final.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201117033113_InitialCreate")]
+    [Migration("20201122195300_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,19 +20,9 @@ namespace Examen_Final.Migrations
 
             modelBuilder.Entity("Examen_Final.Data.Cliente", b =>
                 {
-                    b.Property<int>("ClienteId")
+                    b.Property<int>("ClienteID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Apellido1")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Apellido2")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Cedula")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Correo")
                         .HasColumnType("TEXT");
@@ -50,10 +40,14 @@ namespace Examen_Final.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Rnc")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Telefono")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ClienteId");
+                    b.HasKey("ClienteID");
 
                     b.ToTable("clientes");
                 });

@@ -9580,25 +9580,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luis_\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Milen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Examen_Final.csproj",
+      "projectUniqueName": "C:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Examen_Final.csproj",
       "projectName": "Examen_Final",
-      "projectPath": "C:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Examen_Final.csproj",
-      "packagesPath": "C:\\Users\\luis_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\obj\\",
+      "projectPath": "C:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\Examen_Final.csproj",
+      "packagesPath": "C:\\Users\\Milen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Milen\\OneDrive\\Desktop\\Tienda\\Examen_Final\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\luis_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Milen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9682,7 +9677,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

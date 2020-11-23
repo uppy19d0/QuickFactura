@@ -8,17 +8,12 @@ namespace Examen_Final.Data
 {
     public class Cliente
     {
-        public int ClienteId { get; set; }
+        public int ClienteID { get; set; }
         [Required]
         public string Nombres { get; set; }
-
-        public string Apellido1 { get; set; }
-
-        public string Apellido2 { get; set; }
-
         public string Foto { get; set; }
         [Required]
-        public string Cedula { get; set; }
+        public string Rnc { get; set; }
 
         public string Lat { get; set; }
 
