@@ -119,7 +119,10 @@ using Examen_Final.Data;
     List<Producto> productos = new List<Producto>();
     IFileListEntry image;
      async Task HandleSelectImagen(IFileListEntry[] images ){
+Console.WriteLine("productos",images.FirstOrDefault());
         image = images.FirstOrDefault();
+        Console.WriteLine(image);
+        
 
     }
     protected override async Task OnInitializedAsync()

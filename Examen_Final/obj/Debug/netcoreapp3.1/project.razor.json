@@ -12,6 +12,39 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
+        "HashCode": 1257347574,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.Clientes",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Clientes"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes"
+        }
+      },
+      {
+        "HashCode": -640671258,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.Clientes",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Cliente.Clientes"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -285798288,
         "Kind": "Components.Component",
         "Name": "Examen_Final.Pages.Cliente.Cliente",
@@ -14908,11 +14941,6 @@
   "RootNamespace": "Examen_Final",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Cliente\\Cliente.razor",
       "TargetPath": "Pages\\Cliente\\Cliente.razor",
       "FileKind": "component"
@@ -14928,19 +14956,9 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Shared\\SurveyPrompt.razor",
       "TargetPath": "Shared\\SurveyPrompt.razor",
       "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Shared\\NavMenu.razor",
@@ -14948,29 +14966,14 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
+      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Cliente\\Clientes.razor",
+      "TargetPath": "Pages\\Cliente\\Clientes.razor",
+      "FileKind": "component"
     },
     {
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Shared\\MainLayout.razor",
@@ -14981,26 +14984,6 @@
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
       "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Reporte\\Reporte.razor",
@@ -15016,21 +14999,6 @@
       "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\App.razor",
       "TargetPath": "App.razor",
       "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Pages\\_Host.cshtml",
-      "TargetPath": "Pages\\_Host.cshtml",
-      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

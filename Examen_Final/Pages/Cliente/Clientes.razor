@@ -1,0 +1,234 @@
+@page "/Cliente"
+@using BlazorInputFile
+@using Microsoft.AspNetCore.Identity
+@inject NavigationManager NavigationManager
+@inject ServiceCliente service 
+@inject ServiceUsuario service_usuario
+@inject IJSRuntime JSRuntime
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+@inject IHttpContextAccessor httpContextAccessor
+@using Examen_Final.Data
+
+<AuthorizeView>
+    <Authorized>
+        <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+                <span class="oi oi-plus" aria-hidden="true"></span> Registrar Cliente
+            </button>
+        </div>
+        <br /><br /><br />
+        <div class="row bg-light">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>RNC</th>
+                        <th>Direccion</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (clientes.Any())
+                    {
+                        @foreach (var cliente in clientes)
+                        {
+                    <tr>
+                    <td><img src="@cliente.Foto" width="100" height="100" ></td>
+                        <td>@cliente.Nombres</td>
+                        <td>@cliente.Rnc</td>
+                        <td>@cliente.Lat</td>
+                        <td>@cliente.Long</td>
+                        <td>@cliente.Telefono</td>
+                        <td>@cliente.Correo</td>
+                          <td><button class="btn btn-primary" @onclick="(() => Navegar(cliente))">View</button></td>
+                        <td>
+                            @* <button class="btn btn-info" data-toggle="modal" data-target="#editModalLong" @onclick="(() => SetSecretoForUpdate(secreto))">Editar</button> *@
+                            @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
+                        </td>
+
+                    </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="6"><strong>No existen clientes registrados</strong></td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+       @* MODAL Crear*@
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Registro de clientes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>   
+                     <div class="modal-body">
+                        <div class="col-md-10 mx-auto py-4">
+                            <form>
+                                <div class="form-group">
+                                    <label for="titulo">Nombre</label>
+                                    <input type="text" id="titulo" class="form-control" @bind="@NewCliente.Nombres" required />
+                                </div>
+                                  <div class="form-group">
+                                    <label for="rnc">RNC</label>
+                                    <textarea type="text" id="rnc" class="form-control" @bind="@NewCliente.Rnc" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="latitud">Latitud</label>
+                                    <input type="number" id="latitud" class="form-control" @bind="@NewCliente.Lat" required />
+                                </div>
+                                  <div class="form-group">
+                                    <label for="longitud">Longitud</label>
+                                    <input type="number" id="longitud" class="form-control" @bind="@NewCliente.Long" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Telefono</label>
+                                    <input type="number" id="telefono" class="form-control" @bind="@NewCliente.Telefono" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="correo">Correo</label>
+                                    <input type="text" id="correo" class="form-control" @bind="@NewCliente.Correo" required />
+                                </div>
+
+                               <div class="form-group">
+                                <label for="imagen del cliente">Imagen del Cliente</label>
+                                <InputFile OnChange="HandleSelectImagen"></InputFile>
+                                </div>
+                            
+
+                                <div class="text-center p-3 mb-3">
+                                    <button class="btn btn-info" @onclick="AddNewCliente"> Agregar </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* MODAL Editar*@
+        @* <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Editar datos clientes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>   
+                     <div class="modal-body">
+                        <div class="col-md-10 mx-auto py-4">
+                            <form>
+                                <div class="form-group">
+                                    <label for="titulo">Nombre</label>
+                                    <input type="text" id="titulo" class="form-control" @bind="@UpdateCliente.Nombres" required />
+                                </div>
+                                  <div class="form-group">
+                                    <label for="rnc">RNC</label>
+                                    <textarea type="text" id="rnc" class="form-control" @bind="@UpdateCliente.Rnc" required />
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label for="latitud">Latitud</label>
+                                    <input type="number" id="latitud" class="form-control" @bind="@UpdateCliente.Lat" required />
+                                </div>
+                                  <div class="form-group">
+                                    <label for="longitud">Longitud</label>
+                                    <input type="number" id="longitud" class="form-control" @bind="@UpdateCliente.Long" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Telefono</label>
+                                    <input type="number" id="telefono" class="form-control" @bind="@UpdateCliente.Telefono" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="correo">Correo</label>
+                                    <input type="text" id="correo" class="form-control" @bind="@UpdateCliente.Correo" required />
+                                </div>
+
+                               <div class="form-group">
+                                <label for="imagen del cliente">Imagen del Cliente</label>
+                                <InputFile OnChange="HandleSelectImagen"></InputFile>
+                                </div>
+                            
+
+                                <div class="text-center p-3 mb-3">
+                                    <button class="btn btn-info" @onclick="EditarCliente"> Editar </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> *@
+
+        </Authorized>
+    <NotAuthorized>
+        <center>
+            <h1>Necesitas estar logeado</h1>
+            <br /><br />
+            <p>
+                Necesita entrar con tu  usuario para poder visualizar los clientes
+            </p>
+        </center>
+
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    public string name_search;
+    Usuario usuario1;
+    List<Cliente> clientes = new List<Cliente>();
+    IFileListEntry image;
+     async Task HandleSelectImagen(IFileListEntry[] images ){
+         Console.WriteLine("hola mundo",images.FirstOrDefault());
+        image = images.FirstOrDefault();
+        Console.WriteLine(image);
+
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+        await Refresh();
+    }
+     private void Navegar(Cliente cliente)
+    {
+        NavigationManager.NavigateTo("/Cliente/" + cliente.ClienteID);
+    } 
+
+      private async Task Refresh()
+    {
+        clientes = await service.GetClientesAsync();
+        usuario1 = await service_usuario.getInformation(name_search);
+    }
+
+ public Cliente NewCliente { get; set; } = new Cliente();
+
+  private async Task AddNewCliente()
+    {
+        await service.AddClienteAsync(NewCliente,image);
+        NewCliente = new Cliente();
+        await Refresh();
+    }
+
+   Cliente UpdateCliente = new Cliente();
+      private void SetClienteForUpdate(Cliente cliente)
+    {
+        UpdateCliente = cliente;
+    }
+
+     private async Task EditarCliente()
+    {
+        await service.UpdateClienteAsync(UpdateCliente);
+        await Refresh();
+    }
+}
