@@ -12,29 +12,33 @@ namespace Examen_Final.Data
     public class ServiceCliente
     {
         private ApplicationDbContext _dbContext;
- private readonly IWebHostEnvironment _webHostEnvironment;
-        public ServiceCliente(ApplicationDbContext dbContext,IWebHostEnvironment Environment)
+        // private readonly IWebHostEnvironment _webHostEnvironment;
+        public ServiceCliente(ApplicationDbContext dbContext,
+         IWebHostEnvironment Environment
+         )
         {
             _dbContext = dbContext;
-            _webHostEnvironment = Environment;
+            // _webHostEnvironment = Environment;
         }
         //Obtener Cliente
         public async Task<List<Cliente>> GetClientesAsync() => await _dbContext.clientes.ToListAsync();
 
 
         //Crear Cliente
-        public async Task<Cliente> AddClienteAsync(Cliente cliente,IFileListEntry file)
+        public async Task<Cliente> AddClienteAsync(Cliente cliente
+        // IFileListEntry file
+        )
         {
             try
             {
-            var path = Path.Combine(_webHostEnvironment.ContentRootPath,"./wwwroot/Clientes",file.Name);
-               var streamwriter = new MemoryStream();
-               await file.Data.CopyToAsync(streamwriter);
-                FileStream files=new FileStream(path,FileMode.Create,FileAccess.Write);
-                {
-                    streamwriter.WriteTo(files);
-                    cliente.Foto =path.Substring(path.LastIndexOf("Clientes"));
-                }
+                // var path = Path.Combine(_webHostEnvironment.ContentRootPath, "./wwwroot/Clientes", file.Name);
+                // var streamwriter = new MemoryStream();
+                // await file.Data.CopyToAsync(streamwriter);
+                // FileStream files = new FileStream(path, FileMode.Create, FileAccess.Write);
+                // {
+                //    streamwriter.WriteTo(files);
+                //    cliente.Foto = path.Substring(path.LastIndexOf("Clientes"));
+                // }
                 _dbContext.clientes.Add(cliente);
                 await _dbContext.SaveChangesAsync();
             }
@@ -63,18 +67,18 @@ namespace Examen_Final.Data
             }
             return cliente;
         }
-        //Borrar Cliente
-        // public async Task DeleteClienteAsync(Factura factura)
-        // {
-        //     try
-        //     {
-        //         _dbContext.facturas.Remove(factura);
-        //         await _dbContext.SaveChangesAsync();
-        //     }
-        //     catch (Exception)
-        //     {
-        //         throw;
-        //     }
-        // }
+        // Desactivar Cliente
+        public async Task DesactivarClienteAsync(Factura factura)
+        {
+            try
+            {
+                _dbContext.facturas.Remove(factura);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

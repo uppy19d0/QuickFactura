@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Examen_Final.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,7 +41,7 @@ namespace Examen_Final.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
-                    UsuarioId = table.Column<int>(nullable: true),
+                    UsuarioID = table.Column<int>(nullable: true),
                     Nombres = table.Column<string>(nullable: true),
                     Documento_Identidad = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
@@ -58,13 +58,12 @@ namespace Examen_Final.Migrations
                 name: "clientes",
                 columns: table => new
                 {
-                    ClienteId = table.Column<int>(nullable: false)
+                    ClienteID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nombres = table.Column<string>(nullable: false),
-                    Apellido1 = table.Column<string>(nullable: true),
-                    Apellido2 = table.Column<string>(nullable: true),
+                    Direccion = table.Column<string>(nullable: true),
                     Foto = table.Column<string>(nullable: true),
-                    Cedula = table.Column<string>(nullable: false),
+                    Rnc = table.Column<string>(nullable: false),
                     Lat = table.Column<string>(nullable: true),
                     Long = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
@@ -72,19 +71,7 @@ namespace Examen_Final.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_clientes", x => x.ClienteId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "facturas",
-                columns: table => new
-                {
-                    FacturaID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_facturas", x => x.FacturaID);
+                    table.PrimaryKey("PK_clientes", x => x.ClienteID);
                 });
 
             migrationBuilder.CreateTable(
@@ -211,6 +198,38 @@ namespace Examen_Final.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "facturas",
+                columns: table => new
+                {
+                    FacturaID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Cancelada = table.Column<bool>(nullable: false),
+                    ClienteID = table.Column<int>(nullable: false),
+                    UsuarioID = table.Column<string>(nullable: true),
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    SubTotal = table.Column<double>(nullable: false),
+                    Total = table.Column<double>(nullable: false),
+                    Itbis = table.Column<double>(nullable: false),
+                    ProductoID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_facturas", x => x.FacturaID);
+                    table.ForeignKey(
+                        name: "FK_facturas_clientes_ClienteID",
+                        column: x => x.ClienteID,
+                        principalTable: "clientes",
+                        principalColumn: "ClienteID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_facturas_productos_ProductoID",
+                        column: x => x.ProductoID,
+                        principalTable: "productos",
+                        principalColumn: "ProductoID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -247,6 +266,16 @@ namespace Examen_Final.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_facturas_ClienteID",
+                table: "facturas",
+                column: "ClienteID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_facturas_ProductoID",
+                table: "facturas",
+                column: "ProductoID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -267,19 +296,19 @@ namespace Examen_Final.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "clientes");
-
-            migrationBuilder.DropTable(
                 name: "facturas");
-
-            migrationBuilder.DropTable(
-                name: "productos");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "clientes");
+
+            migrationBuilder.DropTable(
+                name: "productos");
         }
     }
 }

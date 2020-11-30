@@ -1,0 +1,167 @@
+@page "/Factura/Crear"
+@using Microsoft.AspNetCore.Identity
+@using Examen_Final.Data
+@inject NavigationManager NavigationManager
+@inject ServiceUsuario service_usuario
+@inject ServiceProducto service_producto
+@inject ServiceFactura service
+@inject ServiceCliente service_cliente
+@inject IJSRuntime JSRuntime
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+@inject IHttpContextAccessor httpContextAccessor
+@using System.Linq;
+<AuthorizeView>
+    <Authorized>
+   <div>
+            <div>
+                <h5>Factura</h5>
+            </div>
+         <form Model=" @NewFactura">
+            <div class="row">
+            <div  class="form-group col-md-6">
+                 <label for="">Clientes:</label>
+                        <select id="customer" class="form-control" placeholder="Cliente" @bind="@NewFactura.ClienteID">
+                            @foreach (var cliente in clientes)
+                                {
+                                <option value="@cliente.ClienteID">
+                                    @cliente.Nombres
+                                </option>
+                                }
+                        </select>
+                        </div>
+            <div  class="form-group col-md-3">
+                 <label for="">Fecha de Creacion:</label>
+                 <input type="date" @bind="NewFactura.Fecha" disabled>
+            </div>
+            </div>
+                  
+            <div class="form-group">
+            @* <button type="button" class="btn btn-success"
+                    @onclick="@(() => @NewFactura.productos.Add(new Producto()))">
+           <span class="oi oi-plus" aria-hidden="true"></span> Producto o Servicio   
+            </button> *@
+            </div>
+            <label for="">Producto:</label>
+                        <select id="customer" class="form-control" placeholder="Producto" @bind="@NewFactura.ProductoID">
+                            @foreach (var producto in productos)
+                                {
+                                <option value="@producto.ProductoID">
+                                    @producto.Nombre
+                                </option>
+                                }
+                        </select>
+                
+                    @* @for (var i = 0; i < @NewFactura.productos.Count; i++)
+                    {
+                    var indice = i;
+                    var producto = @NewFactura.productos[i];
+
+                        <h5>Producto o Servicio @(i+1)</h5>
+                       
+                    <select id="producto" class="form-control" placeholder="Productos" @bind="@NewFactura.producto" >
+                                        @foreach (var producto1 in productos)
+                                            {
+                                            <option value="@producto1.ProductoID">
+                                                @producto1.Nombre
+                                            </option>
+                                              }                                         
+                     </select>
+                     @NewFactura.productos[i].Nombre
+                      @NewFactura.productos[i].Precio
+                                        <div>
+                                            
+                                        </div>
+                        
+                        <button type="button" class="btn btn-danger"
+                                @onclick="@(() => NewFactura.productos.RemoveAt(indice))"
+                                >Remover</button>
+                    } *@
+                    
+                    @* @foreach (var item in @NewFactura.productos)
+                    {
+                        
+                        @NewFactura.Total +=item.Precio +  @NewFactura.Total;
+                       
+
+                    }
+                     <label>Total:</label>
+                        <p>
+                            total
+                        </p> *@
+                                <div class="text-center p-3 mb-3">
+                                    <button class="btn btn-info" @onclick="AddNewFactura"> Agregar </button>
+                                </div>
+                            </form>
+                        </div>
+        
+    </Authorized>
+    <NotAuthorized>
+        <center>
+            <h1>Lo Siento necesita esta logueado</h1>
+            <br /><br />
+            <p>
+                Necesita entrar con tu  usuario para poder visualizar los secreto y poder ver tu secreto
+            </p>
+        </center>
+
+    </NotAuthorized>
+</AuthorizeView>
+@functions {
+    
+    string selectedString ;
+
+        
+    
+}
+
+@code {
+    
+    public string name_search;
+    Usuario usuario1;
+    int producto_id;
+    List<Factura> facturas = new List<Factura>();
+    List<Cliente> clientes = new List<Cliente>();
+    List<Producto> productos = new List<Producto>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+        await Refresh();
+        NewFactura.Fecha= DateTime.Now;
+    }
+      private void Navegar(Factura factura)
+    {
+        NavigationManager.NavigateTo("/Factura/" + factura.FacturaID);
+    }
+
+    private async Task Refresh()
+    {
+        clientes = await service_cliente.GetClientesAsync();
+        productos = await service_producto.GetProductoAsync();
+        facturas = await service.GetFacturaAsync();
+        usuario1 = await service_usuario.getInformation(name_search);
+    }
+
+
+    public Factura NewFactura { get; set; } = new Factura();
+    private async Task AddNewFactura()
+    {
+        NewFactura.UsuarioID = usuario1.Id;
+        await service.AddFacturaAsync(NewFactura);
+        NewFactura = new Factura();
+        await Refresh();
+    }
+    Factura FacturaUpdate = new Factura();
+    private void SetProductoForUpdate(Factura factura)
+    {
+        FacturaUpdate = factura;
+    }
+    private async Task UpdateFacturaData()
+    {
+        await service.UpdateFacturaAsync(FacturaUpdate);
+        await Refresh();
+    }
+
+}

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Examen_Final.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201122195300_InitialCreate")]
+    [Migration("20201130032915_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,9 @@ namespace Examen_Final.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Correo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Direccion")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Foto")
@@ -58,7 +61,35 @@ namespace Examen_Final.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Cancelada")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ClienteID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Itbis")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("ProductoID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("SubTotal")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("UsuarioID")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("FacturaID");
+
+                    b.HasIndex("ClienteID");
+
+                    b.HasIndex("ProductoID");
 
                     b.ToTable("facturas");
                 });
@@ -314,13 +345,28 @@ namespace Examen_Final.Migrations
                     b.Property<string>("Telefono")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UsuarioId")
+                    b.Property<int>("UsuarioID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("WebSite")
                         .HasColumnType("TEXT");
 
                     b.HasDiscriminator().HasValue("Usuario");
+                });
+
+            modelBuilder.Entity("Examen_Final.Data.Factura", b =>
+                {
+                    b.HasOne("Examen_Final.Data.Cliente", "Cliente")
+                        .WithMany("Facturas")
+                        .HasForeignKey("ClienteID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Examen_Final.Data.Producto", "producto")
+                        .WithMany("Facturas")
+                        .HasForeignKey("ProductoID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

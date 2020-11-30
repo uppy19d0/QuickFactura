@@ -1,0 +1,112 @@
+@page "/Factura"
+@using Microsoft.AspNetCore.Identity
+@using Examen_Final.Data
+@inject NavigationManager NavigationManager
+@inject ServiceUsuario service_usuario
+@inject ServiceProducto service_producto
+@inject ServiceFactura service
+@inject ServiceCliente service_cliente
+@inject IJSRuntime JSRuntime
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+@inject IHttpContextAccessor httpContextAccessor
+
+<AuthorizeView>
+    <Authorized>
+        <br /><br /><br />
+        <div class="row bg-light">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Productos</th>
+                        <th>SubTotal</th>
+                        <th>Itbis</th>
+                        <th>Total</th>
+                        <th>Ver mas Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (facturas.Where(f=>f.UsuarioID == usuario1.Id).ToList().Any())
+                    {
+                        @foreach (var factura in facturas.Where(f=>f.UsuarioID == usuario1.Id).ToList())
+                        {
+                    <tr>
+                        <td>@factura.Fecha</td>
+                        <td>@factura.Cliente.Nombres</td>
+                        <td>@factura.producto.Nombre</td>
+                        <td>@factura.SubTotal</td>
+                        <td>@factura.Itbis</td>
+                        <td>@factura.Total</td>
+                          <td><button class="btn btn-primary" @onclick="(() => Navegar(factura))">View</button></td>
+                        <td>
+                            @* <button class="btn btn-info" data-toggle="modal" data-target="#editModalLong" @onclick="(() => SetSecretoForUpdate(secreto))">Editar</button> *@
+                            @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
+                        </td>
+
+                    </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="6"><strong>No hay factura creado</strong></td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <center>
+            <h1>Lo Siento necesita esta logueado</h1>
+            <br /><br />
+            <p>
+                Necesita entrar con tu  usuario para poder visualizar los secreto y poder ver tu secreto
+            </p>
+        </center>
+
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    public string name_search;
+    Usuario usuario1;
+    List<Factura> facturas = new List<Factura>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+        await Refresh();
+    }
+      private void Navegar(Factura factura)
+    {
+        NavigationManager.NavigateTo("/Factura/" + factura.FacturaID);
+    }
+
+    private async Task Refresh()
+    {
+        facturas = await service.GetFacturaAsync();
+        usuario1 = await service_usuario.getInformation(name_search);
+    }
+
+    public Factura NewFactura { get; set; } = new Factura();
+    private async Task AddNewFactura()
+    {
+        await service.AddFacturaAsync(NewFactura);
+        NewFactura = new Factura();
+        await Refresh();
+    }
+    Factura FacturaUpdate = new Factura();
+    private void SetProductoForUpdate(Factura factura)
+    {
+        FacturaUpdate = factura;
+    }
+    private async Task UpdateFacturaData()
+    {
+        await service.UpdateFacturaAsync(FacturaUpdate);
+        await Refresh();
+    }
+
+
+}

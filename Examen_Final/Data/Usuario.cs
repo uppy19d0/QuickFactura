@@ -9,7 +9,7 @@ namespace Examen_Final.Data
 {
     public class Usuario : IdentityUser
     {
-        public int UsuarioId { get; set; }
+        public int UsuarioID { get; set; }
         [Required]
         public string Nombres { get; set; }
 

@@ -15,7 +15,7 @@ namespace Examen_Final.Data
             _dbContext = dbContext;
         }
          //Obtener Factura
-        public async Task<List<Factura>> GetFacturaAsync() => await _dbContext.facturas.ToListAsync();
+        public async Task<List<Factura>> GetFacturaAsync() => await _dbContext.facturas.Include(f=>f.Cliente).Include(f=>f.producto).ToListAsync();
 
 
         //Crear Factura

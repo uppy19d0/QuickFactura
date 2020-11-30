@@ -1,0 +1,24 @@
+@page "/Factura/{Id:int}"
+
+
+
+
+
+@code{
+   @* List<Integrate> Integrates = new List<Integrate>(); *@
+    [Parameter]
+    public int Id { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshIntegrates();
+    }
+
+    private async Task RefreshIntegrates()
+    {
+        @* Integrates = await service.GetIntegratesAsync(); *@
+    } 
+}
+
+
+
+ 

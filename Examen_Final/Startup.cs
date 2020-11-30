@@ -32,6 +32,17 @@ namespace Examen_Final
                       options.UseSqlite("Data Source=tienda.db"));
             services.AddDefaultIdentity<Usuario>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentityCore<Usuario>(setupAction =>
+            {
+                setupAction.Password.RequireDigit = true;
+                setupAction.Password.RequiredUniqueChars = 0;
+                setupAction.Password.RequireLowercase = false;
+                setupAction.Password.RequireNonAlphanumeric = false;
+                setupAction.Password.RequireUppercase = false;
+                setupAction.Password.RequiredLength = 3;
+                setupAction.SignIn.RequireConfirmedEmail = false;
+                setupAction.SignIn.RequireConfirmedPhoneNumber = false;
+            });
             services.AddRazorPages();
             services.AddScoped<ServiceUsuario>();
             services.AddScoped<ServiceCliente>();

@@ -22,7 +22,6 @@
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Imagen</th>
                         <th>Nombre</th>
                         <th>RNC</th>
                         <th>Direccion</th>
@@ -30,6 +29,8 @@
                         <th>Longitud</th>
                         <th>Telefono</th>
                         <th>Correo</th>
+                        <th>Ver Mas</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,16 +39,16 @@
                         @foreach (var cliente in clientes)
                         {
                     <tr>
-                    <td><img src="@cliente.Foto" width="100" height="100" ></td>
                         <td>@cliente.Nombres</td>
                         <td>@cliente.Rnc</td>
+                        <td>@cliente.Direccion</td>
                         <td>@cliente.Lat</td>
                         <td>@cliente.Long</td>
                         <td>@cliente.Telefono</td>
                         <td>@cliente.Correo</td>
                           <td><button class="btn btn-primary" @onclick="(() => Navegar(cliente))">View</button></td>
                         <td>
-                            @* <button class="btn btn-info" data-toggle="modal" data-target="#editModalLong" @onclick="(() => SetSecretoForUpdate(secreto))">Editar</button> *@
+                            <button class="btn btn-info" data-toggle="modal" data-target="#editexampleModalLong" @onclick="(() => SetClienteForUpdate(cliente))">Editar</button>
                             @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
                         </td>
 
@@ -74,7 +75,7 @@
                     </div>   
                      <div class="modal-body">
                         <div class="col-md-10 mx-auto py-4">
-                            <form>
+                            <form Model="@NewCliente">
                                 <div class="form-group">
                                     <label for="titulo">Nombre</label>
                                     <input type="text" id="titulo" class="form-control" @bind="@NewCliente.Nombres" required />
@@ -93,18 +94,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="telefono">Telefono</label>
-                                    <input type="number" id="telefono" class="form-control" @bind="@NewCliente.Telefono" required />
+                                    <input type="text" id="telefono" class="form-control" @bind="@NewCliente.Telefono" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="correo">Correo</label>
                                     <input type="text" id="correo" class="form-control" @bind="@NewCliente.Correo" required />
                                 </div>
-
-                               <div class="form-group">
-                                <label for="imagen del cliente">Imagen del Cliente</label>
-                                <InputFile OnChange="HandleSelectImagen"></InputFile>
+                                <div class="form-group">
+                                    <label for="direccion">Dirreccion</label>
+                                    <input type="text" id="direccion" class="form-control" @bind="@NewCliente.Direccion" required />
                                 </div>
-                            
 
                                 <div class="text-center p-3 mb-3">
                                     <button class="btn btn-info" @onclick="AddNewCliente"> Agregar </button>
@@ -117,7 +116,7 @@
         </div>
 
         @* MODAL Editar*@
-        @* <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+         <div class="modal fade" id="editexampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -154,12 +153,10 @@
                                     <label for="correo">Correo</label>
                                     <input type="text" id="correo" class="form-control" @bind="@UpdateCliente.Correo" required />
                                 </div>
-
-                               <div class="form-group">
-                                <label for="imagen del cliente">Imagen del Cliente</label>
-                                <InputFile OnChange="HandleSelectImagen"></InputFile>
+                                <div class="form-group">
+                                    <label for="direccion">Dirreccion</label>
+                                    <input type="text" id="direccion" class="form-control" @bind="@UpdateCliente.Direccion" required />
                                 </div>
-                            
 
                                 <div class="text-center p-3 mb-3">
                                     <button class="btn btn-info" @onclick="EditarCliente"> Editar </button>
@@ -169,7 +166,7 @@
                     </div>
                 </div>
             </div>
-        </div> *@
+        </div> 
 
         </Authorized>
     <NotAuthorized>
@@ -188,45 +185,41 @@
     public string name_search;
     Usuario usuario1;
     List<Cliente> clientes = new List<Cliente>();
-    IFileListEntry image;
-     async Task HandleSelectImagen(IFileListEntry[] images ){
-         Console.WriteLine("hola mundo",images.FirstOrDefault());
-        image = images.FirstOrDefault();
-        Console.WriteLine(image);
+    //IFileListEntry image;
+    //async Task HandleSelectImagen(IFileListEntry[] images )=> image =  images[0];
 
-    }
     protected override async Task OnInitializedAsync()
     {
         name_search = httpContextAccessor.HttpContext.User.Identity.Name;
         await Refresh();
     }
-     private void Navegar(Cliente cliente)
+    private void Navegar(Cliente cliente)
     {
         NavigationManager.NavigateTo("/Cliente/" + cliente.ClienteID);
-    } 
+    }
 
-      private async Task Refresh()
+    private async Task Refresh()
     {
         clientes = await service.GetClientesAsync();
         usuario1 = await service_usuario.getInformation(name_search);
     }
 
- public Cliente NewCliente { get; set; } = new Cliente();
+    public Cliente NewCliente { get; set; } = new Cliente();
 
-  private async Task AddNewCliente()
+    private async Task AddNewCliente()
     {
-        await service.AddClienteAsync(NewCliente,image);
+        await service.AddClienteAsync(NewCliente);
         NewCliente = new Cliente();
         await Refresh();
     }
 
-   Cliente UpdateCliente = new Cliente();
-      private void SetClienteForUpdate(Cliente cliente)
+    Cliente UpdateCliente = new Cliente();
+    private void SetClienteForUpdate(Cliente cliente)
     {
         UpdateCliente = cliente;
     }
 
-     private async Task EditarCliente()
+    private async Task EditarCliente()
     {
         await service.UpdateClienteAsync(UpdateCliente);
         await Refresh();

@@ -19,5 +19,6 @@ namespace Examen_Final.Data
         public bool Servicio { get; set; }
 
         public double Cantidad { get; set; }
+        public virtual ICollection<Factura> Facturas { get; set; }
     }
 }
