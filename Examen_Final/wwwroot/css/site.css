@@ -6,13 +6,13 @@ body {
 
 a,
 .btn-link {
-    color: #0366d6;
+    color: #CD5C5C;
 }
 
 .btn-primary {
     color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    background-color: #F08080;
+    border-color: #F08080;
 }
 
 app {
@@ -36,8 +36,8 @@ app {
 }
 
 .main .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
+    background-color: #f1e0d3;
+    border-bottom: 1px solid #bb9696;
     justify-content: flex-end;
 }
 
@@ -53,11 +53,11 @@ app {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-image: linear-gradient(180deg, rgb(229, 206, 175) 0%, #F6DDCC 70%);
 }
 
 .sidebar .top-row {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(116, 43, 43, 0.4);
 }
 
 .sidebar .navbar-brand {
@@ -80,12 +80,16 @@ app {
     padding-top: 1rem;
 }
 
+.sidebar .nav-item:first-of-type {
+    padding-top: 1rem;
+}
+
 .sidebar .nav-item:last-of-type {
     padding-bottom: 1rem;
 }
 
 .sidebar .nav-item a {
-    color: #d7d7d7;
+    color: rgb(184, 16, 16);
     border-radius: 4px;
     height: 3rem;
     display: flex;
@@ -95,12 +99,12 @@ app {
 
 .sidebar .nav-item a.active {
     background-color: rgba(255, 255, 255, 0.25);
-    color: white;
+    color: rgb(184, 16, 16);
 }
 
 .sidebar .nav-item a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: rgba(19, 13, 13, 0.1);
+    color: rgb(0, 0, 0);
 }
 
 .content {
@@ -108,7 +112,7 @@ app {
 }
 
 .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(251, 238, 230 0.1);
 }
 
 .valid.modified:not([type=checkbox]) {

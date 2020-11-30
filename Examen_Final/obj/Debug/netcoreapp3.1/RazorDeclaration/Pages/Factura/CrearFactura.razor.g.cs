@@ -12,98 +12,98 @@ namespace Examen_Final.Pages.Factura
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 1 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 2 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 3 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 4 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 5 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 6 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 7 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 8 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Examen_Final;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 9 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Examen_Final.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 10 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\_Imports.razor"
+#line 12 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using BlazorInputFile;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\Pages\Factura\CrearFactura.razor"
+#line 2 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\CrearFactura.razor"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\Pages\Factura\CrearFactura.razor"
+#line 3 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\CrearFactura.razor"
 using Examen_Final.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\Pages\Factura\CrearFactura.razor"
+#line 13 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\CrearFactura.razor"
 using System.Linq;
 
 #line default
@@ -118,7 +118,7 @@ using System.Linq;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 110 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\Pages\Factura\CrearFactura.razor"
+#line 110 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\CrearFactura.razor"
             
     
     string selectedString ;
@@ -130,7 +130,7 @@ using System.Linq;
 #line hidden
 #nullable disable
 #nullable restore
-#line 118 "C:\Users\luis_\source\repos\Examen_Final\Examen_Final\Pages\Factura\CrearFactura.razor"
+#line 118 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\CrearFactura.razor"
        
     
     public string name_search;

@@ -24,9 +24,9 @@
                     <tr>
                         <th>Imagen</th>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th>Descripción</th>
                         <th>Precio</th>
-                        <th>Servicio?</th>
+                        <th>Servicio</th>
                         <th>Cantidad</th>
                         <th>Ver mas Detalle</th>
                     </tr>
@@ -66,7 +66,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Creacion de Producto</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Creación de Producto</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -79,7 +79,7 @@
                                     <input type="text" id="titulo" class="form-control" @bind="@NewProducto.Nombre" required />
                                 </div>
                                   <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
+                                    <label for="descripcion">Descripción</label>
                                     <textarea type="text" id="descripcion" class="form-control" @bind="@NewProducto.Descripcion" required />
                                 </div>
                                 <div class="form-group">
@@ -95,7 +95,7 @@
                                     <input type="number" id="cantidad" class="form-control" @bind="@NewProducto.Cantidad" required />
                                 </div>
                                <div class="form-group">
-                                <label for="nombre">Pruebas graficas(s)</label>
+                                <label for="nombre">Pruebas gráficas(s)</label>
                                 <InputFile OnChange="HandleSelectImagen"></InputFile>
                                 </div>
                             
@@ -177,7 +177,7 @@
             <h1>Lo Siento necesita esta logueado</h1>
             <br /><br />
             <p>
-                Necesita entrar con tu  usuario para poder visualizar los secreto y poder ver tu secreto
+                Necesita entrar con tu usuario
             </p>
         </center>
 
