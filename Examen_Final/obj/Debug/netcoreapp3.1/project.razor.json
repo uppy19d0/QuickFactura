@@ -111,39 +111,6 @@
         }
       },
       {
-        "HashCode": 114463733,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Reporte.Reporte",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Reporte"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte"
-        }
-      },
-      {
-        "HashCode": -1343363026,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Reporte.Reporte",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Reporte.Reporte"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 321708707,
         "Kind": "Components.Component",
         "Name": "Examen_Final.Pages.Factura.CrearFactura",
