@@ -2,34 +2,38 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Iniciar sesión";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 style = "font-weight:bold; color:BurlyWood">@ViewData["Title"]</h1>
 <center>
     <img class="rounded-Thumbnail" height="180" width="180"
-         asp-append-version="true" src="/Images/icon_login.jpg" />
-    <form id="account" method="post">
+         asp-append-version="true" src="/Images/person.jpg" />
+    <form asp-for="account" method="post">
         <div>
-            <h3 style="font-weight:bold; color:blue">Sistema para Secreto</h3>
+            <h3 style="font-weight:bold; color:BurlyWood">Sistema de facturación </h3>
         </div>
         <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="col-12 row">
-            <label>Cedula O RNC</label>
-            <input asp-for="Input.Documento_Identidad" class="form-control" />
+         <div class="col-12 row">
+    <label for="Input.Documento_Identidad">Cédula O RNC</label>
+    <input  class="form-control" asp-for="Input.Documento_Identidad" 
+           aria-describedby="Documento_Identidad" placeholder="Ingrese Documento de Identidad">
             <span asp-validation-for="Input.Documento_Identidad" class="text-danger"></span>
-        </div>
+           
+  </div>
         <div class="col-12 row">
-            <label asp-for="Input.Password"></label>
-            <input asp-for="Input.Password" class="form-control" />
-            <span asp-validation-for="Input.Password" class="text-danger"></span>
-        </div>
+    <label for="Input.Password">Contraseña</label>
+    <input  class="form-control" asp-for="Input.Password"
+           aria-describedby="Input.Password" placeholder="Ingrese su contraseña">
+             <span asp-validation-for="Input.Password" class="text-danger"></span>
+        
         <br /><br />
-        <button type="submit" class="btn btn-primary  btn-lg">Entrar</button>
+        <button type="submit" class="btn btn-primary btn-block" >Entrar</button>
+        
 
         <div class="col-12 row">
             <span class="col-12">
-                <a href="/Identity/Account/Register" class="col-6">Creamer una cuenta</a>
+                <a href="/Identity/Account/Register" class="col-6" style = "color:BurlyWood">Crear una cuenta</a>
             </span>
         </div>
 
