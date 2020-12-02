@@ -111,6 +111,39 @@
         }
       },
       {
+        "HashCode": -44509847,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Factura.Facturas",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Facturas"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas"
+        }
+      },
+      {
+        "HashCode": 1804512531,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Factura.Facturas",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Factura.Facturas"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -2038798739,
         "Kind": "Components.Component",
         "Name": "Examen_Final.Pages.Factura.ViewFactura",
@@ -160,39 +193,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Examen_Final.Pages.Factura.ViewFactura",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -44509847,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.Facturas",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Facturas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas"
-        }
-      },
-      {
-        "HashCode": 1804512531,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.Facturas",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Factura.Facturas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
