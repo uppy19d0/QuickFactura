@@ -12,20 +12,26 @@
 @inject IHttpContextAccessor httpContextAccessor
 <AuthorizeView>
     <Authorized>
-        <div class="container">
+        
+        <div class="d-flex flex-row-reverse">
+            <button type="button" @onclick="Imprimir" class="btn btn-success  btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+                <span class="oi oi-print" aria-hidden="true"></span> Imprimir factura
+            </button>
+        </div>
+        <div class="container" id="Imprimir_factura">
             @* @if (factura.Any())
-                { *@
+            { *@
             @* <td>@factura.Cliente.Nombres</td>
-                <td>@factura.producto.Nombre</td>
-                <td>@factura.SubTotal</td>
-                <td>@factura.Itbis</td>
-                <td>@factura.Total</td> *@
+            <td>@factura.producto.Nombre</td>
+            <td>@factura.SubTotal</td>
+            <td>@factura.Itbis</td>
+            <td>@factura.Total</td> *@
             <div id="header" class="row">
                 @* <div class="col-sm-4">
-                        <img class="rounded-Thumbnail"
-                             height="100" width="100"
-                             asp-append-version="true" src="@Integrate.Foto " />
-                    </div>  *@
+                    <img class="rounded-Thumbnail"
+                         height="100" width="100"
+                         asp-append-version="true" src="@Integrate.Foto " />
+                </div>  *@
 
                 <div class="col-sm-10">
                     <div class="cv-title">
@@ -81,25 +87,26 @@
                         <p class="h3 text-secondary"><b>  Total:</b> <span> @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))</span></p>
                     </div>
                 </div>
+
                 @*<div class="form-control">
-                        <div>
-                            <label>SubTotal</label>
-                            @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad)
-                        </div>
-                        <div>
-                            <label>ITBIS</label>
-                            @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18)
-                        </div>
-                        <div>
-                            <label>Total</label>
-                            @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))
-                        </div>
-                    </div>*@
+                    <div>
+                        <label>SubTotal</label>
+                        @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad)
+                    </div>
+                    <div>
+                        <label>ITBIS</label>
+                        @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18)
+                    </div>
+                    <div>
+                        <label>Total</label>
+                        @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))
+                    </div>
+                </div>*@
             </div>
             @* } *@
 
             @* else
-                { *@
+            { *@
             @* <tr><td colspan="6"><strong>No hay Factura disponibles</strong></td></tr> *@
             @* } *@
 
@@ -152,6 +159,13 @@
         @* productos = await service_producto.GetProductoAsync(); *@
         facturas = await service.GetFacturaAsync();
         @* usuario1 = await service_usuario.getInformation(name_search); *@
+    }
+
+    //Módulo de impresion
+    public async Task Imprimir()
+    {
+
+        await JSRuntime.InvokeVoidAsync("imprimir_factura");
     }
 
 }

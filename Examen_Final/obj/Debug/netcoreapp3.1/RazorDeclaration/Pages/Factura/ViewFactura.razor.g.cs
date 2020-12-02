@@ -112,7 +112,7 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 123 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+#line 130 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
       
     Factura factura = new Factura();
     [Parameter]
@@ -132,7 +132,7 @@ using Examen_Final.Data;
 #line hidden
 #nullable disable
 #nullable restore
-#line 136 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+#line 143 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
                                 
 
 
@@ -154,7 +154,7 @@ using Examen_Final.Data;
 #line hidden
 #nullable disable
 #nullable restore
-#line 152 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+#line 159 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
                                                                     
         facturas = await service.GetFacturaAsync();
         
@@ -163,8 +163,15 @@ using Examen_Final.Data;
 #line hidden
 #nullable disable
 #nullable restore
-#line 154 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+#line 161 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
                                                                            
+    }
+
+    //Módulo de impresion
+    public async Task Imprimir()
+    {
+
+        await JSRuntime.InvokeVoidAsync("imprimir_factura");
     }
 
 
