@@ -6,7 +6,7 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,13 +14,14 @@
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
+    <link href="css/miestilo.css" rel="stylesheet" />
 </head>
 <body>
     <app>
         <component type="typeof(App)" render-mode="ServerPrerendered" />
     </app>
-    
-   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin="">
     </script>
@@ -40,5 +41,45 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="printThis.js"></script>
+
+    <!--script que imprime reporte (modulo reporte)-->
+    <script type="text/javascript">
+
+        function imprimir_reporte() {
+
+            var divContenido = document.getElementById("Imprimir_reporte").innerHTML;
+            var a = window.open('', '', 'height=1000, width=1000');
+            a.document.write('<html>');
+            a.document.write('<head>');
+            a.document.write('<style>#customers {  font-family: Arial, Helvetica, sans-serif; width: 100 %; } #customers td { padding: 12px;} #customers th {border-bottom: 2px solid #fff; padding: 12px; }  #customers th { padding-top: 12px; padding-bottom: 12px; text-align: center; background-color: #F1E0D3; color: black; } h2 { font-family: verdana; text-align: left; border-bottom: 4px solid;} h4 {border-top: 2px solid; text-align: center;} p { font-family: verdana; font-size: 15px; text-align: right;}</style>');
+            a.document.write('</head>');
+            a.document.write('<body id="customers"> <br>');
+            a.document.write(divContenido);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+
+    <!--script que imprime factura-->
+    <script type="text/javascript">
+
+        function imprimir_factura() {
+
+            var divContenido = document.getElementById("Imprimir_factura").innerHTML;
+            var a = window.open('', '', 'height=1000, width=1000');
+            a.document.write('<html>');
+            a.document.write('<head>');
+            a.document.write('<style>#customers {  font-family: Arial, Helvetica, sans-serif; width: 100 %; } #customers td { padding: 12px;} #customers th {border-bottom: 2px solid #fff; padding: 12px; }  #customers th { padding-top: 12px; padding-bottom: 12px; text-align: center; background-color: #F1E0D3; color: black; } h2 { font-family: verdana; text-align: left; border-bottom: 4px solid;} h4 {border-top: 2px solid; text-align: center;} p { font-family: verdana; font-size: 15px; text-align: right;}</style>');
+            a.document.write('</head>');
+            a.document.write('<body id="customers"> <br>');
+            a.document.write(divContenido);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+﻿/*HOJA DE ESTILO PARA MODULO DE REPORTE*/
+
+.tabla {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .tabla td, .tabla th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .tabla tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .tabla tr:hover {
+        background-color: #ddd;
+    }
+
+    .tabla th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        color: white;
+    }
+
+.productos_th_color th {
+    background-color: #EDBB99;
+}
+
+.demanda_th_color th {
+    background-color: #F6DDCC;
+}
+
+.frecuencia_th_color th {
+    background-color: #F5CBA7;
+}
+
+.cumpleanos_th_color th {
+    background-color: #FDF2E9;
+    color: dimgray;
+}
+
+/*Link tipo botón*/
+a.boton:link, a.boton:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.boton:hover, a.boton:active {
+    background-color: red;
+}

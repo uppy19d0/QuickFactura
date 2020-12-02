@@ -93,21 +93,32 @@
                         <table class="tabla demanda_th_color">
                             <thead>
                                 <tr>
-                                    @foreach (var factura in facturas)
-                                    {
-                                        @foreach (var item in factura.facturas_detalle.GroupBy(o => o.producto).OrderByDescending(g => g.Sum(oi => oi.Cantidad)))
-                                        {
-                                            @foreach (var data in item)
-                                            {
-                                                @data.producto.Nombre
-                                            }
-                                        }
-                                    }
 
-                                    \
+                                    <th>Nombre</th>
+                                    <th>Descripci&#243;n</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+
                                 </tr>
                             </thead>
                             <tbody>
+
+                                @foreach (var factura in facturas)
+                                {
+                                    @foreach (var item in factura.facturas_detalle.GroupBy(o => o.producto).OrderByDescending(g => g.Sum(oi => oi.Cantidad)))
+                                    {
+                                        @foreach (var data in item)
+                                        {
+                                            <tr>
+                                                <td>@data.producto.Nombre</td>
+                                                <td>@data.producto.Descripcion</td>
+                                                <td>@data.producto.Precio</td>
+                                                <td>@data.Cantidad</td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+
                             </tbody>
                         </table>
                         <div class="mt-4">
@@ -135,30 +146,39 @@
                         <table class="tabla frecuencia_th_color">
                             <thead>
                                 <tr>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
+                                    <th>Nombre</th>
+                                    <th>Total</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    @*@foreach (var factura in facturas.GroupBy(o => o.ClienteID).ToList())
+                                
+                                    @foreach (var factura in facturas.GroupBy(o => o.ClienteID).ToList())
                                     {
 
                                         @foreach (var data in factura.GroupBy(i => i.ClienteID).Select(d => d.OrderByDescending(p => p.facturas_detalle.Sum(p1 => p1.producto.Precio * p1.Cantidad + p.facturas_detalle.Sum(p2 => p2.producto.Precio * p2.Cantidad * 0.18))).ToList()))
                                         {
-                                            @foreach (var order in data.GroupBy(i=>i.ClienteID))
+                                            @foreach (var order in data)
                                             {
-                                                @for
-                                                @order.Cliente.Nombres
-                                                <labe><b>Total:</b>@data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p1 => p1.producto.Precio * p1.producto.Cantidad + data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p2 => p2.producto.Precio * p2.producto.Cantidad * 0.18))</labe>
+                                                
+                                                @foreach (var detalle in order.facturas_detalle)
+                                                {
+                                                    <tr>
+                                                        <td>@order.Cliente.Nombres</td>
+                                                        <td>@order.Cliente.</td> que necesita? Yo disque pa poner mas campos pero creo que no es necesario
+                                                        <td>@order.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + order.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))                                                                                                                </td>
+
+                                                            @*@data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p1 => detalle.producto.Precio * detalle.Cantidad + data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p2 => detalle.producto.Precio * detalle.producto.Cantidad * 0.18))*@
+                                                        
+                                                    </tr>
+                                                }
+
                                             }
 
 
                                         }
 
-                                    }*@
-                                </tr>
+                                    }
+                                
                             </tbody>
                         </table>
                     </div>
