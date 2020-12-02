@@ -888,3 +888,4 @@ C:\Users\leudy\Desktop\Nuevo Rep\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Exa
 C:\Users\leudy\Desktop\Nuevo Rep\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\staticwebassets\Examen_Final.StaticWebAssets.Manifest.cache
 C:\Users\leudy\Desktop\Nuevo Rep\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\staticwebassets\Examen_Final.StaticWebAssets.xml
 C:\Users\leudy\Desktop\Nuevo Rep\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Examen_Final.genruntimeconfig.cache
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Reporte\Mapa.cshtml.g.cs
