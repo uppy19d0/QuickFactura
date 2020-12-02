@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Examen_Final.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialCreat : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -67,7 +67,8 @@ namespace Examen_Final.Migrations
                     Lat = table.Column<string>(nullable: true),
                     Long = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
-                    Correo = table.Column<string>(nullable: true)
+                    Correo = table.Column<string>(nullable: true),
+                    Fecha_nacimiento = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,0 +1,91 @@
+﻿@page "/mapa"
+
+@using Examen_Final.Data
+@inject ServiceCliente scliente
+@using Newtonsoft.Json
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+
+@{
+
+    var js = JsonConvert.SerializeObject(scliente.GetClientesAsync().Result,
+        new JsonSerializerSettings()
+        {
+            ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore,
+            Formatting = Formatting.Indented
+        });
+
+}
+
+
+<!DocType html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mapa</title>
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css\site.css">
+    <link rel="stylesheet" href="css\miestilo.css">
+
+    <style>
+        #map {
+            width: 1270px;
+            height: 450px;
+        }
+    </style>
+</head>
+@if (SignInManager.IsSignedIn(User))
+{
+
+
+    <body>
+
+        <div class="row">
+            <div class="col-md-2">
+                <a class="boton" href="Reporte">Volver</a>
+
+            </div>
+            <div class="col-10">
+                <h2 class="text-center">Geolocalización de clientes</h2>
+
+            </div>
+        </div>
+
+        <div id="map">
+            <script>
+                const set = {
+                    center: [18.735693,-70.162651],
+                    zoom: 8
+                }
+
+                let map = L.map('map', set)
+                let tileLayer = L.tileLayer('http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png');
+
+                map.addLayer(tileLayer);
+                let clientes = @Html.Raw(js);
+
+                for(let cliente of clientes){
+
+
+
+                    L.marker([cliente.Lat, cliente.Long]).addTo(map)
+                        .bindPopup('<b>Nombre:</b> ' + cliente.Nombres +
+                        '<br><b>Dirección:</b> ' + cliente.Direccion +
+                        '<br><b>Teléfono:</b> ' + cliente.Telefono+
+                        '<br><b>Correo:</b> ' + cliente.Correo)
+                        .openPopup();
+
+                }
+            </script>
+        </div>
+
+    </body>
+}
+</html>
+

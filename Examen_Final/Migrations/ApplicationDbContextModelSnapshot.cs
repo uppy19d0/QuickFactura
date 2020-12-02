@@ -28,6 +28,9 @@ namespace Examen_Final.Migrations
                     b.Property<string>("Direccion")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("Fecha_nacimiento")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Foto")
                         .HasColumnType("TEXT");
 

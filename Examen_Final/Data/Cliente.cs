@@ -25,7 +25,9 @@ namespace Examen_Final.Data
         public string Telefono { get; set; }
 
         public string Correo { get; set; }
-        
+
+          public DateTime Fecha_nacimiento { get; set; }
+
         public virtual ICollection<Factura> Facturas { get; set; }
     }
 }

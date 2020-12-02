@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Examen_Final.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201202053414_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201202083028_InitialCreat")]
+    partial class InitialCreat
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,9 @@ namespace Examen_Final.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Direccion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Fecha_nacimiento")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Foto")
