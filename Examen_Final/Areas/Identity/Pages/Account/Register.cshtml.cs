@@ -69,7 +69,6 @@ namespace Examen_Final.Areas.Identity.Pages.Account
             [Display(Name = "Direccion")]
             public string Direccion { get; set; }
 
-            [Required]
             [Display(Name = "WebSite")]
             public string WebSite { get; set; }
 

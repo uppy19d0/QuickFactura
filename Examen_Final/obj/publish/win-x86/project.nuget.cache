@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W5fqUL/NY4nuY5vhsAcXNnpT21sjAf+zk3KyJ/Wk2hZj0uKwQF5qAygEFDsa0PlEf3vH5fgbRvEFaHs8GHcpLg==",
+  "dgSpecHash": "SFqAyugBRoo0Q4h2eO+7vhTy4QbgwjWvNLYmNqH+hlY6ntvaM0PSwE1XhHt7S9Xj+CFB8eBR50UOW65boa6LIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Examen_Final.csproj",
+  "projectFilePath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Examen_Final.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luis_\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",
     "C:\\Users\\luis_\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.0-preview3.19555.2\\microsoft.aspnetcore.authorization.3.1.0-preview3.19555.2.nupkg.sha512",

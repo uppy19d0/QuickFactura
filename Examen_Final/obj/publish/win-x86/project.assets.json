@@ -13315,11 +13315,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Examen_Final.csproj",
+      "projectUniqueName": "C:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Examen_Final.csproj",
       "projectName": "Examen_Final",
-      "projectPath": "C:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\Examen_Final.csproj",
+      "projectPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Examen_Final.csproj",
       "packagesPath": "C:\\Users\\luis_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luis_\\source\\repos\\Examen_Final\\Examen_Final\\obj\\publish\\win-x86\\",
+      "outputPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\obj\\publish\\win-x86\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

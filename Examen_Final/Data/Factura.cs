@@ -16,8 +16,8 @@ namespace Examen_Final.Data
         public double SubTotal { get; set; }
         public double Total { get; set; }
         public double Itbis { get; set; }
-        public int ProductoID { get; set; }
         public virtual Producto producto { get; set; }
-        // public List<Producto> productos { get; set; } = new List<Producto>();
+        public virtual FacturaDetalle FacturaDetalle  { get; set; }
+        public List<FacturaDetalle> facturas_detalle { get; set; } = new List<FacturaDetalle>();
     }
 }

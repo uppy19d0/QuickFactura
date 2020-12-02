@@ -112,7 +112,7 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 184 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Cliente\Clientes.razor"
+#line 182 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Cliente\Clientes.razor"
        
     public string name_search;
     Usuario usuario1;

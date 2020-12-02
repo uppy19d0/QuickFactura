@@ -29,7 +29,6 @@
                         <th>Longitud</th>
                         <th>Teléfono</th>
                         <th>Correo</th>
-                        <th>Ver Mas</th>
                         <th>Editar</th>
                     </tr>
                 </thead>
@@ -46,7 +45,6 @@
                         <td>@cliente.Long</td>
                         <td>@cliente.Telefono</td>
                         <td>@cliente.Correo</td>
-                          <td><button class="btn btn-primary" @onclick="(() => Navegar(cliente))">View</button></td>
                         <td>
                             <button class="btn btn-info" data-toggle="modal" data-target="#editexampleModalLong" @onclick="(() => SetClienteForUpdate(cliente))">Editar</button>
                             @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
@@ -106,7 +104,7 @@
                                 </div>
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="AddNewCliente"> Agregar </button>
+                                    <button class="btn btn-info" @onclick="AddNewCliente"  data-dismiss="modal"> Agregar </button>
                                 </div>
                             </form>
                         </div>
@@ -159,7 +157,7 @@
                                 </div>
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="EditarCliente"> Editar </button>
+                                    <button class="btn btn-info" @onclick="EditarCliente"  data-dismiss="modal"> Editar </button>
                                 </div>
                             </form>
                         </div>

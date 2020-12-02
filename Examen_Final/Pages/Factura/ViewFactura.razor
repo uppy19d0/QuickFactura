@@ -1,24 +1,160 @@
 @page "/Factura/{Id:int}"
+@using Microsoft.AspNetCore.Identity
+@using Examen_Final.Data
+@inject NavigationManager NavigationManager
+@inject ServiceUsuario service_usuario
+@inject ServiceProducto service_producto
+@inject ServiceFactura service
+@inject ServiceCliente service_cliente
+@inject IJSRuntime JSRuntime
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+@inject IHttpContextAccessor httpContextAccessor
+<AuthorizeView>
+    <Authorized>
+        <div class="container">
+            @* @if (factura.Any())
+                { *@
+            @* <td>@factura.Cliente.Nombres</td>
+                <td>@factura.producto.Nombre</td>
+                <td>@factura.SubTotal</td>
+                <td>@factura.Itbis</td>
+                <td>@factura.Total</td> *@
+            <div id="header" class="row">
+                @* <div class="col-sm-4">
+                        <img class="rounded-Thumbnail"
+                             height="100" width="100"
+                             asp-append-version="true" src="@Integrate.Foto " />
+                    </div>  *@
 
+                <div class="col-sm-10">
+                    <div class="cv-title">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <b>Nombre del Cliente</b>
+                                <h1 class="mt-3">@factura.Cliente.Nombres </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row bg-light">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (factura.facturas_detalle.Any())
+                        {
+                            @foreach (var producto in factura.facturas_detalle)
+                            {
+                                <tr>
+                                    <td>@producto.producto.Nombre</td>
+                                    <td>@producto.producto.Descripcion</td>
+                                    <td>@producto.producto.Precio</td>
+                                    <td>@producto.Cantidad</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr><td colspan="6"><strong>No hay producto creado</strong></td></tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <div>
+                        <p class="h3 text-secondary"><b>  Subtotal: </b><span> @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad)</span></p>
+                    </div>
+                    <hr />
+                    <div>
+                        <p class="h3 text-secondary"> <b> ITBIS: </b><span> @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18)</span></p>
+                    </div>
+                    <hr />
+                    <div>
+                        <p class="h3 text-secondary"><b>  Total:</b> <span> @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))</span></p>
+                    </div>
+                </div>
+                @*<div class="form-control">
+                        <div>
+                            <label>SubTotal</label>
+                            @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad)
+                        </div>
+                        <div>
+                            <label>ITBIS</label>
+                            @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18)
+                        </div>
+                        <div>
+                            <label>Total</label>
+                            @factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))
+                        </div>
+                    </div>*@
+            </div>
+            @* } *@
+
+            @* else
+                { *@
+            @* <tr><td colspan="6"><strong>No hay Factura disponibles</strong></td></tr> *@
+            @* } *@
+
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <center>
+            <h1>Necesitas estar logeado</h1>
+            <br /><br />
+            <p>
+                Necesita entrar con tu  usuario para poder visualizar los clientes
+            </p>
+        </center>
+
+    </NotAuthorized>
+
+</AuthorizeView>
 
 
 
 @code{
-   @* List<Integrate> Integrates = new List<Integrate>(); *@
+    Factura factura = new Factura();
     [Parameter]
     public int Id { get; set; }
+
+
+    private async Task RefreshFactura()
+    {
+        factura = await service.GetFacturaSingleAsync(Id);
+    }
+    List<Factura> facturas = new List<Factura>();
+    List<Cliente> clientes = new List<Cliente>();
+    List<Producto> productos = new List<Producto>();
+    @* string status_Factura; *@
+
+
+    private void UpdateHeading(MouseEventArgs e)
+    {
+
+    }
     protected override async Task OnInitializedAsync()
     {
-        await RefreshIntegrates();
+        await RefreshFactura();
+        await Refresh();
     }
 
-    private async Task RefreshIntegrates()
+    private async Task Refresh()
     {
-        @* Integrates = await service.GetIntegratesAsync(); *@
-    } 
+        @* clientes = await service_cliente.GetClientesAsync(); *@
+        @* productos = await service_producto.GetProductoAsync(); *@
+        facturas = await service.GetFacturaAsync();
+        @* usuario1 = await service_usuario.getInformation(name_search); *@
+    }
+
 }
 
 
 
- 

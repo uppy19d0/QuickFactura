@@ -12,6 +12,39 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
+        "HashCode": 1070311947,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.App",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.App"
+        }
+      },
+      {
+        "HashCode": -1689137301,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.App",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 1257347574,
         "Kind": "Components.Component",
         "Name": "Examen_Final.Pages.Cliente.Clientes",
@@ -74,72 +107,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Examen_Final.Pages.Cliente.ViewCliente",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -175132148,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Index",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Index"
-        }
-      },
-      {
-        "HashCode": -1952795237,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Index",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Index",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 321708707,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.CrearFactura",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CrearFactura"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.CrearFactura"
-        }
-      },
-      {
-        "HashCode": 617037499,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.CrearFactura",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Factura.CrearFactura"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.CrearFactura",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -230,35 +197,35 @@
         }
       },
       {
-        "HashCode": 1291209940,
+        "HashCode": -175132148,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Producto.ViewProducto",
+        "Name": "Examen_Final.Pages.Index",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ViewProducto"
+            "TagName": "Index"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto"
+          "Common.TypeName": "Examen_Final.Pages.Index"
         }
       },
       {
-        "HashCode": -593675984,
+        "HashCode": -1952795237,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Producto.ViewProducto",
+        "Name": "Examen_Final.Pages.Index",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Examen_Final.Pages.Producto.ViewProducto"
+            "TagName": "Examen_Final.Pages.Index"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto",
+          "Common.TypeName": "Examen_Final.Pages.Index",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -296,35 +263,101 @@
         }
       },
       {
-        "HashCode": 1070311947,
+        "HashCode": 1291209940,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
+        "Name": "Examen_Final.Pages.Producto.ViewProducto",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "ViewProducto"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App"
+          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto"
         }
       },
       {
-        "HashCode": -1689137301,
+        "HashCode": -593675984,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
+        "Name": "Examen_Final.Pages.Producto.ViewProducto",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Examen_Final.App"
+            "TagName": "Examen_Final.Pages.Producto.ViewProducto"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App",
+          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 114463733,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Reporte.Reporte",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Reporte"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte"
+        }
+      },
+      {
+        "HashCode": -1343363026,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Reporte.Reporte",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Reporte.Reporte"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1118605737,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.LoginDisplay",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "LoginDisplay"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.LoginDisplay"
+        }
+      },
+      {
+        "HashCode": 729790800,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.LoginDisplay",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Shared.LoginDisplay"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.LoginDisplay",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -425,35 +458,35 @@
         }
       },
       {
-        "HashCode": -1118605737,
+        "HashCode": -100529733,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.LoginDisplay",
+        "Name": "Examen_Final.Shared.NavMenu",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "LoginDisplay"
+            "TagName": "NavMenu"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.LoginDisplay"
+          "Common.TypeName": "Examen_Final.Shared.NavMenu"
         }
       },
       {
-        "HashCode": 729790800,
+        "HashCode": -1410552635,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.LoginDisplay",
+        "Name": "Examen_Final.Shared.NavMenu",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Examen_Final.Shared.LoginDisplay"
+            "TagName": "Examen_Final.Shared.NavMenu"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.LoginDisplay",
+          "Common.TypeName": "Examen_Final.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -507,39 +540,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Examen_Final.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -100529733,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.NavMenu",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1410552635,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.NavMenu",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15069,11 +15069,6 @@
     {
       "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Shared\\MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Factura\\CrearFactura.razor",
-      "TargetPath": "Pages\\Factura\\CrearFactura.razor",
       "FileKind": "component"
     },
     {

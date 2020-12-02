@@ -13,30 +13,35 @@ namespace Examen_Final.Data
     {
         
         private ApplicationDbContext _dbContext;
-        private readonly IWebHostEnvironment _webHostEnvironment;  
-        public ServiceProducto(ApplicationDbContext dbContext,IWebHostEnvironment Environment)
+        //private readonly IWebHostEnvironment _webHostEnvironment;  
+        public ServiceProducto(ApplicationDbContext dbContext
+            //IWebHostEnvironment Environment
+            )
         {
             _dbContext = dbContext;
-            _webHostEnvironment = Environment;
+            //_webHostEnvironment = Environment;
 
         }
          //Obtener Producto
         public async Task<List<Producto>> GetProductoAsync() => await _dbContext.productos.ToListAsync();
 
-
+        public async Task<Producto> GetProductoSingleAsync(int idProducto) => await _dbContext.productos.FirstOrDefaultAsync(p => p.ProductoID == idProducto);
+        
         //Crear Producto
-        public async Task<Producto> AddProductoAsync(Producto producto,IFileListEntry file)
+        public async Task<Producto> AddProductoAsync(Producto producto
+            //IFileListEntry file
+            )
         {
             try
             {
-               var path = Path.Combine(_webHostEnvironment.ContentRootPath,"./wwwroot/Productos",file.Name);
-               var streamwriter = new MemoryStream();
-               await file.Data.CopyToAsync(streamwriter);
-                FileStream files=new FileStream(path,FileMode.Create,FileAccess.Write);
-                {
-                    streamwriter.WriteTo(files);
-                    producto.img =path.Substring(path.LastIndexOf("Productos"));
-                }
+               //var path = Path.Combine(_webHostEnvironment.ContentRootPath,"./wwwroot/Productos",file.Name);
+               //var streamwriter = new MemoryStream();
+               //await file.Data.CopyToAsync(streamwriter);
+               // FileStream files=new FileStream(path,FileMode.Create,FileAccess.Write);
+               // {
+               //     streamwriter.WriteTo(files);
+               //     producto.img =path.Substring(path.LastIndexOf("Productos"));
+               // }
                 _dbContext.productos.Add(producto);
                 await _dbContext.SaveChangesAsync();
 

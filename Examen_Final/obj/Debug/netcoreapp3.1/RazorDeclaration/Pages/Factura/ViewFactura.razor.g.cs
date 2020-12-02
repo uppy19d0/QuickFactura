@@ -83,13 +83,6 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
-using Microsoft.AspNetCore.Identity;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 12 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using BlazorInputFile;
 
@@ -97,7 +90,14 @@ using BlazorInputFile;
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 2 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
 using Examen_Final.Data;
 
 #line default
@@ -112,16 +112,41 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 8 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
-                                                            
+#line 123 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+      
+    Factura factura = new Factura();
     [Parameter]
     public int Id { get; set; }
+
+
+    private async Task RefreshFactura()
+    {
+        factura = await service.GetFacturaSingleAsync(Id);
+    }
+    List<Factura> facturas = new List<Factura>();
+    List<Cliente> clientes = new List<Cliente>();
+    List<Producto> productos = new List<Producto>();
+    
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 136 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+                                
+
+
+    private void UpdateHeading(MouseEventArgs e)
+    {
+
+    }
     protected override async Task OnInitializedAsync()
     {
-        await RefreshIntegrates();
+        await RefreshFactura();
+        await Refresh();
     }
 
-    private async Task RefreshIntegrates()
+    private async Task Refresh()
     {
         
 
@@ -129,13 +154,32 @@ using Examen_Final.Data;
 #line hidden
 #nullable disable
 #nullable restore
-#line 18 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
-                                                              
-    } 
+#line 152 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+                                                                    
+        facturas = await service.GetFacturaAsync();
+        
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 154 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\ViewFactura.razor"
+                                                                           
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpContextAccessor httpContextAccessor { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UserManager<Usuario> UserManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignInManager<Usuario> SignInManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ServiceCliente service_cliente { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ServiceFactura service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ServiceProducto service_producto { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ServiceUsuario service_usuario { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

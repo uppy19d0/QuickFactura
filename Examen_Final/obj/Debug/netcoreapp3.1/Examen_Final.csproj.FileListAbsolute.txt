@@ -605,7 +605,6 @@ C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\E
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Cliente\Clientes.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Cliente\ViewCliente.razor.g.cs
-C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Factura\CrearFactura.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Factura\Facturas.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Factura\ViewFactura.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
@@ -625,7 +624,6 @@ C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\E
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Cliente\Clientes.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Cliente\ViewCliente.razor.g.cs
-C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Factura\CrearFactura.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Factura\Facturas.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Factura\ViewFactura.razor.g.cs
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs

@@ -13,35 +13,50 @@
 
 <AuthorizeView>
     <Authorized>
+        <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+                <span class="oi oi-plus" aria-hidden="true"></span> Crear Factura
+            </button>
+        </div>
         <br /><br /><br />
         <div class="row bg-light">
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
                         <th>Fecha</th>
+                        <th>Status</th>
                         <th>Cliente</th>
-                        <th>Productos</th>
                         <th>SubTotal</th>
                         <th>Itbis</th>
                         <th>Total</th>
                         <th>Ver mas Detalle</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @if (facturas.Where(f=>f.UsuarioID == usuario1.Id).ToList().Any())
+                    @if (facturas.Where(f => f.UsuarioID == usuario1.Id).ToList().Any())
                     {
-                        @foreach (var factura in facturas.Where(f=>f.UsuarioID == usuario1.Id).ToList())
+                        @foreach (var factura in facturas.Where(f => f.UsuarioID == usuario1.Id).ToList())
                         {
                     <tr>
                         <td>@factura.Fecha</td>
+                        @if (factura.Cancelada)
+                        {
+                            <td>Cancelada</td>
+                        }
+                        else
+                        {
+                            <td>Valida</td>
+                        }
+                        
+
                         <td>@factura.Cliente.Nombres</td>
-                        <td>@factura.producto.Nombre</td>
-                        <td>@factura.SubTotal</td>
-                        <td>@factura.Itbis</td>
-                        <td>@factura.Total</td>
-                          <td><button class="btn btn-primary" @onclick="(() => Navegar(factura))">View</button></td>
+                        <td>@factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad)</td>
+                        <td>@factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18)</td>
+                        <td>@factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))</td>
+                        <td><button class="btn btn-primary" @onclick="(() => Navegar(factura))">View</button></td>
                         <td>
-                            @* <button class="btn btn-info" data-toggle="modal" data-target="#editModalLong" @onclick="(() => SetSecretoForUpdate(secreto))">Editar</button> *@
+                            <button class="btn btn-info" data-toggle="modal" data-target="#editexampleModalLong" @onclick="(() => SetFacturaForUpdate(factura))">Editar</button>
                             @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
                         </td>
 
@@ -55,6 +70,182 @@
                 </tbody>
             </table>
         </div>
+        @* MODAL Crear*@
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Creación de Factura</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-10 mx-auto py-4">
+
+                            <form Model=" @NewFactura">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="">Clientes:</label>
+                                        <select id="customer" class="form-control" placeholder="Cliente" @bind="@NewFactura.ClienteID">
+                                            @foreach (var cliente in clientes)
+                                            {
+                                                <option value="@cliente.ClienteID">
+                                                    @cliente.Nombres
+                                                </option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="">Fecha de Creacion:</label>
+                                        <input type="date" @bind="NewFactura.Fecha" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success"
+                                            @onclick="@(() => @NewFactura.facturas_detalle.Add(new FacturaDetalle()))">
+                                        <span class="oi oi-plus" aria-hidden="true"></span> Producto o Servicio
+                                    </button>
+                                </div>
+                                @* <label for="">Producto:</label>
+                                    <select id="customer" class="form-control" placeholder="Producto" @bind="@NewFactura.ProductoID">
+                                        @foreach (var producto in productos)
+                                            {
+                                            <option value="@producto.ProductoID">
+                                                @producto.Nombre
+                                            </option>
+                                            }
+                                    </select> *@
+
+                                @for (var i = 0; i < @NewFactura.facturas_detalle.Count; i++)
+                                {
+                                    var indice = i;
+                                    var producto = @NewFactura.facturas_detalle[i];
+                                    <h5>Producto o Servicio @(i+1)</h5>
+
+                                    <select id="producto" class="form-control" placeholder="Productos" @bind="producto.ProductoID">
+                                        @foreach (var producto1 in productos)
+                                        {
+                                            <option value="@producto1.ProductoID">
+                                                @producto1.Nombre
+                                            </option>
+                                        }
+                                    </select>
+                                    <div class="form-group">
+                                        <label>Cantidad:</label>
+                                        <input class="form-control" type="text" @bind-value="producto.Cantidad" />
+                                    </div>
+
+                                    <button type="button" class="btn btn-danger"
+                                            @onclick="@(() => NewFactura.facturas_detalle.RemoveAt(indice))">
+                                        Borrar
+                                    </button>
+                                }
+
+                                <div class="text-center p-3 mb-3">
+                                    <button class="btn btn-info" @onclick="AddNewFactura"> Agregar </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* MODAL Editar*@
+        <div class="modal fade" id="editexampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Edicion de Factura</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-10 mx-auto py-4">
+                            <form Model="@FacturaUpdate">
+                                <div class="d-flex flex-row-reverse">
+                                    <label for="servicio">Status:@status_invoices</label>
+                                    <input type="checkbox" id="servicio" class="form-control" @bind="@FacturaUpdate.Cancelada" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="">Clientes:</label>
+                                    <select id="customer" class="form-control" placeholder="Cliente" @bind="@FacturaUpdate.ClienteID">
+                                        @foreach (var cliente in clientes)
+                                        {
+                                            <option value="@cliente.ClienteID">
+                                                @cliente.Nombres
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+
+                                @for (var i = 0; i < @FacturaUpdate.facturas_detalle.Count; i++)
+                                {
+                                    var indice = i;
+                                    var producto = @FacturaUpdate.facturas_detalle[i];
+
+                                    <h5>Producto y Servicio @(i+1)</h5>
+
+                                    <select id="producto" class="form-control" placeholder="Productos">
+                                        @foreach (var producto1 in productos)
+                                        {
+                                            <option value="@producto1.ProductoID">
+                                                @producto1.Nombre (@producto1.Cantidad)
+                                            </option>
+
+                                        }
+                                    </select>
+                                    <div class="form-group">
+                                        <label>Cantidad:</label>
+                                        @*<h5>Demasiado producto solo tenemos</h5>*@
+                                        <input class="form-control" type="text" @bind-value="producto.Cantidad" />
+                                    </div>
+                                    if (FacturaUpdate.facturas_detalle.Count >= 2)
+                                    {
+                                        <button type="button" class="btn btn-danger"
+                                                @onclick="@(() => NewFactura.facturas_detalle.RemoveAt(indice))">
+                                            Borrar
+                                        </button>
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+                            <!--<div class="form-group">
+                                <label>ITBIS:</label>
+                                
+                            </div>-->
+                                    @*<div class="form-group">
+                                            <label>SubTotal:</label>
+                                            @if (producto.producto != null)
+                                            {
+                                                @subtotal
+                                            }
+
+                                        </div>*@
+                                    <!--<div class="form-group">
+                                        <label>Total:</label>
+                                  
+
+                                    </div>-->
+                                }
+
+
+                                <div class="text-center p-3 mb-3">
+                                    <button class="btn btn-info" @onclick="UpdateFacturaData"> Editar Factura </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </Authorized>
     <NotAuthorized>
@@ -62,7 +253,7 @@
             <h1>Lo Siento necesita esta logueado</h1>
             <br /><br />
             <p>
-                Necesita entrar con tu  usuario para poder visualizar los secreto y poder ver tu secreto
+                Necesita entrar con tu  usuario para poder visualizar los secreto y poder ver tu factura
             </p>
         </center>
 
@@ -70,22 +261,34 @@
 </AuthorizeView>
 
 @code {
+    double total;
     public string name_search;
+    public string status_invoices;
     Usuario usuario1;
     List<Factura> facturas = new List<Factura>();
+    List<Cliente> clientes = new List<Cliente>();
+    List<Producto> productos = new List<Producto>();
+
+
+    //para formular
+    double subtotal;
+    double total_factura;
 
     protected override async Task OnInitializedAsync()
     {
         name_search = httpContextAccessor.HttpContext.User.Identity.Name;
         await Refresh();
+        NewFactura.Fecha = DateTime.Now;
     }
-      private void Navegar(Factura factura)
+    private void Navegar(Factura factura)
     {
         NavigationManager.NavigateTo("/Factura/" + factura.FacturaID);
     }
 
     private async Task Refresh()
     {
+        clientes = await service_cliente.GetClientesAsync();
+        productos = await service_producto.GetProductoAsync();
         facturas = await service.GetFacturaAsync();
         usuario1 = await service_usuario.getInformation(name_search);
     }
@@ -93,12 +296,14 @@
     public Factura NewFactura { get; set; } = new Factura();
     private async Task AddNewFactura()
     {
+
+        NewFactura.UsuarioID = usuario1.Id;
         await service.AddFacturaAsync(NewFactura);
         NewFactura = new Factura();
         await Refresh();
     }
     Factura FacturaUpdate = new Factura();
-    private void SetProductoForUpdate(Factura factura)
+    private void SetFacturaForUpdate(Factura factura)
     {
         FacturaUpdate = factura;
     }

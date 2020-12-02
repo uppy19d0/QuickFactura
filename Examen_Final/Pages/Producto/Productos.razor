@@ -10,7 +10,7 @@
 @inject UserManager<Usuario> UserManager
 @inject IHttpContextAccessor httpContextAccessor
 
-<AuthorizeView>
+<AuthorizeView Context="authContext"> 
     <Authorized>
         <div class="d-flex flex-row-reverse">
             <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-target="#exampleModalLong">
@@ -22,13 +22,13 @@
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Imagen</th>
+                        @*<th>Imagen</th>*@
                         <th>Nombre</th>
                         <th>Descripción</th>
                         <th>Precio</th>
                         <th>Servicio</th>
                         <th>Cantidad</th>
-                        <th>Ver mas Detalle</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,16 +37,20 @@
                         @foreach (var producto in productos)
                         {
                     <tr>
-                    <td><img src="@producto.img" width="100" height="100" ></td>
+                    @*<td><img src="@producto.img" width="100" height="100" ></td>*@
                         <td>@producto.Nombre</td>
                         <td>@producto.Descripcion</td>
                         <td>@producto.Precio</td>
-                        <td>@producto.Servicio</td>
-                        <td>@producto.Cantidad</td>
-                          <td><button class="btn btn-primary" @onclick="(() => Navegar(producto))">View</button></td>
+                        @if(producto.Servicio){
+                        <td>Si</td>
+                        }
+                        else{
+                        <td>No</td>
+                        }
+                        
+                        <td>@producto.Cantidad </td>
                         <td>
-                            @* <button class="btn btn-info" data-toggle="modal" data-target="#editModalLong" @onclick="(() => SetSecretoForUpdate(secreto))">Editar</button> *@
-                            @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
+                             <button class="btn btn-info" data-toggle="modal" data-target="#editModalLong" @onclick="(() => SetProductoForUpdate(producto))">Editar</button> 
                         </td>
 
                     </tr>
@@ -73,7 +77,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="col-md-10 mx-auto py-4">
-                            <form Model="@NewProducto">
+                            <EditForm  Model="@NewProducto">
+                                @* <DataAnnotationsValidator /> *@
                                 <div class="form-group">
                                     <label for="titulo">Nombre</label>
                                     <input type="text" id="titulo" class="form-control" @bind="@NewProducto.Nombre" required />
@@ -88,22 +93,22 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="servicio">Servicio</label>
-                                    <input type="checkbox" id="servicio" class="form-control" @bind="@NewProducto.Servicio" required />
+                                    <input type="checkbox" id="servicio" class="form-control" @bind="@NewProducto.Servicio"/>
                                 </div>
                                   <div class="form-group">
                                     <label for="cantidad">Cantidad</label>
                                     <input type="number" id="cantidad" class="form-control" @bind="@NewProducto.Cantidad" required />
                                 </div>
-                               <div class="form-group">
-                                <label for="nombre">Pruebas gráficas(s)</label>
-                                <InputFile OnChange="HandleSelectImagen"></InputFile>
-                                </div>
+                               <!--<div class="form-group">
+                                <label for="nombre">Pruebas gráficas(s)</label>-->
+                                @*<InputFile OnChange="HandleSelectImagen"></InputFile>*@
+                                <!--</div>-->
                             
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="AddNewProducto"> Agregar </button>
+                                    <button class="btn btn-info" @onclick="AddNewProducto"  data-dismiss="modal"> Agregar </button>
                                 </div>
-                            </form>
+                            </EditForm>
                         </div>
                     </div>
                 </div>
@@ -112,7 +117,7 @@
 
 
         @* MODAL Editar*@
-        @* <div class="modal fade" id="editModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="editModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -123,53 +128,42 @@
                     </div>
                     <div class="modal-body">
                         <div class="col-md-10 mx-auto py-4">
-                            <form>
+                                 <EditForm  Model="@NewProducto">
                                 <div class="form-group">
-                                    <label for="titulo">Titulo</label>
+                                    <label for="titulo">Nombre</label>
                                     <input type="text" id="titulo" class="form-control" @bind="@ProductoUpdate.Nombre" required />
                                 </div>
-                                <div class="form-group">
-                                    <label for="fecha"> Fecha</label>
-                                    <input type="date" id="fecha" class="form-control" @bind="@ProductoUpdate.Fecha" required />
+                                  <div class="form-group">
+                                    <label for="descripcion">Descripción</label>
+                                    <textarea type="text" id="descripcion" class="form-control" @bind="@ProductoUpdate.Descripcion" required />
                                 </div>
                                 <div class="form-group">
-                                    <label for="valor_monetario">Valor Monetario</label>
-                                    <input type="number" id="valor_monetario" class="form-control" @bind="@UpdateSecreto.Valor_Monetario" required />
+                                    <label for="precio"> Precio</label>
+                                    <input type="number" id="precio" class="form-control" @bind="@ProductoUpdate.Precio" required />
                                 </div>
-                                <div class="form-group">
-                                    <label for="lugar">Lugar</label>
-                                    <input type="text" id="lugar" class="form-control" @bind="@UpdateSecreto.Lugar" required />
+                                <div>
+                                    <label for="servicio">Servicio</label>
+                                    <input type="checkbox" id="servicio" class="form-control" @bind="@ProductoUpdate.Servicio" />
                                 </div>
-                                <div class="form-group">
-                                    <label for="peso">Peso</label>
-                                    <input type="number" id="peso" class="form-control" @bind="@UpdateSecreto.Peso" required />
+                                  <div class="form-group">
+                                    <label for="cantidad">Cantidad</label>
+                                    <input type="number" id="cantidad" class="form-control" @bind="@ProductoUpdate.Cantidad" required />
                                 </div>
-                                <div class="form-group">
-                                    <label for="quantity">Descripcion</label>
-                                    <textarea type="text" id="descripcion" class="form-control" @bind="@UpdateSecreto.Descripcion" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="URL">URL</label>
-                                    <input type="text" id="URL" class="form-control" @bind="@UpdateSecreto.Url" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="Description">Latitud</label>
-                                    <input type="text" id="Description" class="form-control" @bind="@UpdateSecreto.Lat" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="Description">Longitud</label>
-                                    <input type="text" id="Description" class="form-control" @bind="@UpdateSecreto.Lng" required />
-                                </div>
+                               <!--<div class="form-group">
+                                <label for="nombre">Pruebas gráficas(s)</label>-->
+                                @*<InputFile OnChange="HandleSelectImagen"></InputFile>*@
+                                <!--</div>-->
+                            
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="UpdateProductoData"> Editar Secreto</button>
+                                    <button class="btn btn-info" @onclick="UpdateProductoData"  data-dismiss="modal"> Editar Producto </button>
                                 </div>
-                            </form>
+                            </EditForm>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> *@
+        </div>
 
     </Authorized>
     <NotAuthorized>
@@ -185,23 +179,23 @@
 </AuthorizeView>
 
 @code {
+    //bool editado_image = false;
     public string name_search;
     Usuario usuario1;
     List<Producto> productos = new List<Producto>();
-    IFileListEntry image;
-     async Task HandleSelectImagen(IFileListEntry[] images ){
-Console.WriteLine("productos",images.FirstOrDefault());
-        image = images.FirstOrDefault();
-        Console.WriteLine(image);
-        
+    //IFileListEntry image;
+    //async Task HandleSelectImagen(IFileListEntry[] images ){
+    //    Console.WriteLine("productos",images.FirstOrDefault());
+    //    image = images.FirstOrDefault();
+    //    editado_image = true;
 
-    }
+
     protected override async Task OnInitializedAsync()
     {
         name_search = httpContextAccessor.HttpContext.User.Identity.Name;
         await Refresh();
     }
-      private void Navegar(Producto producto)
+    private void Navegar(Producto producto)
     {
         NavigationManager.NavigateTo("/Producto/" + producto.ProductoID);
     }
@@ -216,7 +210,7 @@ Console.WriteLine("productos",images.FirstOrDefault());
     public Producto NewProducto { get; set; } = new Producto();
     private async Task AddNewProducto()
     {
-        await service.AddProductoAsync(NewProducto,image);
+        await service.AddProductoAsync(NewProducto);
         NewProducto = new Producto();
         await Refresh();
     }

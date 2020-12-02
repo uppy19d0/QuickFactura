@@ -65,13 +65,16 @@ namespace Examen_Final.Migrations
                     b.Property<int>("ClienteID")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("FacturaDetalleID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Itbis")
                         .HasColumnType("REAL");
 
-                    b.Property<int>("ProductoID")
+                    b.Property<int?>("ProductoID")
                         .HasColumnType("INTEGER");
 
                     b.Property<double>("SubTotal")
@@ -87,9 +90,47 @@ namespace Examen_Final.Migrations
 
                     b.HasIndex("ClienteID");
 
+                    b.HasIndex("FacturaDetalleID");
+
                     b.HasIndex("ProductoID");
 
                     b.ToTable("facturas");
+                });
+
+            modelBuilder.Entity("Examen_Final.Data.FacturaDetalle", b =>
+                {
+                    b.Property<int>("FacturaDetalleID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Cantidad")
+                        .HasColumnType("REAL");
+
+                    b.Property<int?>("FacturaID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Itbis")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Precio")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("ProductoID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("SubTotal")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("FacturaDetalleID");
+
+                    b.HasIndex("FacturaID");
+
+                    b.HasIndex("ProductoID");
+
+                    b.ToTable("facturaDetalles");
                 });
 
             modelBuilder.Entity("Examen_Final.Data.Producto", b =>
@@ -360,8 +401,23 @@ namespace Examen_Final.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Examen_Final.Data.FacturaDetalle", "FacturaDetalle")
+                        .WithMany()
+                        .HasForeignKey("FacturaDetalleID");
+
                     b.HasOne("Examen_Final.Data.Producto", "producto")
                         .WithMany("Facturas")
+                        .HasForeignKey("ProductoID");
+                });
+
+            modelBuilder.Entity("Examen_Final.Data.FacturaDetalle", b =>
+                {
+                    b.HasOne("Examen_Final.Data.Factura", null)
+                        .WithMany("facturas_detalle")
+                        .HasForeignKey("FacturaID");
+
+                    b.HasOne("Examen_Final.Data.Producto", "producto")
+                        .WithMany()
                         .HasForeignKey("ProductoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
