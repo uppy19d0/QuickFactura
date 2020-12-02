@@ -112,25 +112,25 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 187 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Producto\Productos.razor"
+#line 181 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Producto\Productos.razor"
        
+    //bool editado_image = false;
     public string name_search;
     Usuario usuario1;
     List<Producto> productos = new List<Producto>();
-    IFileListEntry image;
-     async Task HandleSelectImagen(IFileListEntry[] images ){
-Console.WriteLine("productos",images.FirstOrDefault());
-        image = images.FirstOrDefault();
-        Console.WriteLine(image);
-        
+    //IFileListEntry image;
+    //async Task HandleSelectImagen(IFileListEntry[] images ){
+    //    Console.WriteLine("productos",images.FirstOrDefault());
+    //    image = images.FirstOrDefault();
+    //    editado_image = true;
 
-    }
+
     protected override async Task OnInitializedAsync()
     {
         name_search = httpContextAccessor.HttpContext.User.Identity.Name;
         await Refresh();
     }
-      private void Navegar(Producto producto)
+    private void Navegar(Producto producto)
     {
         NavigationManager.NavigateTo("/Producto/" + producto.ProductoID);
     }
@@ -145,7 +145,7 @@ Console.WriteLine("productos",images.FirstOrDefault());
     public Producto NewProducto { get; set; } = new Producto();
     private async Task AddNewProducto()
     {
-        await service.AddProductoAsync(NewProducto,image);
+        await service.AddProductoAsync(NewProducto);
         NewProducto = new Producto();
         await Refresh();
     }

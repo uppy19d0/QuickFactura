@@ -97,7 +97,7 @@ using BlazorInputFile;
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 3 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Reporte\Reporte.razor"
 using Examen_Final.Data;
 
 #line default
@@ -111,6 +111,49 @@ using Examen_Final.Data;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 257 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Reporte\Reporte.razor"
+      
+
+    DateTime date = DateTime.Now;
+    string selectorReporte;
+
+
+    //Reportes
+    List<Producto> productos = new List<Producto>();
+    List<Cliente> clientes = new List<Cliente>();
+    List<Factura> facturas = new List<Factura>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Refresh();
+    }
+
+    private async Task Refresh()
+    {
+        productos = await serviceProducto.GetProductoAsync();
+        clientes = await serviceCliente.GetClientesAsync();
+        facturas = await ServiceFactura.GetFacturaAsync();
+    }
+
+
+    //Módulo de impresion
+    public async Task Imprimir()
+    {
+
+        await JSRuntime.InvokeVoidAsync("imprimir_reporte");
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ServiceCliente serviceCliente { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ServiceFactura ServiceFactura { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ServiceProducto serviceProducto { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Navigate { get; set; }
     }
 }
 #pragma warning restore 1591

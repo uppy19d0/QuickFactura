@@ -112,24 +112,36 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 72 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\Facturas.razor"
+#line 263 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Factura\Facturas.razor"
        
+    double total;
     public string name_search;
+    public string status_invoices;
     Usuario usuario1;
     List<Factura> facturas = new List<Factura>();
+    List<Cliente> clientes = new List<Cliente>();
+    List<Producto> productos = new List<Producto>();
+
+
+    //para formular
+    double subtotal;
+    double total_factura;
 
     protected override async Task OnInitializedAsync()
     {
         name_search = httpContextAccessor.HttpContext.User.Identity.Name;
         await Refresh();
+        NewFactura.Fecha = DateTime.Now;
     }
-      private void Navegar(Factura factura)
+    private void Navegar(Factura factura)
     {
         NavigationManager.NavigateTo("/Factura/" + factura.FacturaID);
     }
 
     private async Task Refresh()
     {
+        clientes = await service_cliente.GetClientesAsync();
+        productos = await service_producto.GetProductoAsync();
         facturas = await service.GetFacturaAsync();
         usuario1 = await service_usuario.getInformation(name_search);
     }
@@ -137,12 +149,14 @@ using Examen_Final.Data;
     public Factura NewFactura { get; set; } = new Factura();
     private async Task AddNewFactura()
     {
+
+        NewFactura.UsuarioID = usuario1.Id;
         await service.AddFacturaAsync(NewFactura);
         NewFactura = new Factura();
         await Refresh();
     }
     Factura FacturaUpdate = new Factura();
-    private void SetProductoForUpdate(Factura factura)
+    private void SetFacturaForUpdate(Factura factura)
     {
         FacturaUpdate = factura;
     }

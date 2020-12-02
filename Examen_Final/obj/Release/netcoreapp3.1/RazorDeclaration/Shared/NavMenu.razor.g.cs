@@ -111,7 +111,7 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\NavMenu.razor"
+#line 45 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
