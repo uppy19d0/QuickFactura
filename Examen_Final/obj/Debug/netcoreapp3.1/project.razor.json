@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Examen_Final.csproj",
+  "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Examen_Final.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -11,323 +11,6 @@
   },
   "ProjectWorkspaceState": {
     "TagHelpers": [
-      {
-        "HashCode": 1070311947,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App"
-        }
-      },
-      {
-        "HashCode": -1689137301,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -175132148,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Index",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Index"
-        }
-      },
-      {
-        "HashCode": -1952795237,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Index",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Index",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1291209940,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Producto.ViewProducto",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ViewProducto"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto"
-        }
-      },
-      {
-        "HashCode": -593675984,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Producto.ViewProducto",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Producto.ViewProducto"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 920480931,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Producto.Productos",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Productos"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Producto.Productos"
-        }
-      },
-      {
-        "HashCode": -340330087,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Producto.Productos",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Producto.Productos"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Producto.Productos",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -2038798739,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.ViewFactura",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ViewFactura"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.Int32",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.ViewFactura"
-        }
-      },
-      {
-        "HashCode": 380391676,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.ViewFactura",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Factura.ViewFactura"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.Int32",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.ViewFactura",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -44509847,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.Facturas",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Facturas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas"
-        }
-      },
-      {
-        "HashCode": 1804512531,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Factura.Facturas",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Factura.Facturas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1953269425,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Cliente.ViewCliente",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ViewCliente"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Cliente.ViewCliente"
-        }
-      },
-      {
-        "HashCode": -2020041004,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Cliente.ViewCliente",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Cliente.ViewCliente"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Cliente.ViewCliente",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1257347574,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Cliente.Clientes",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Clientes"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes"
-        }
-      },
-      {
-        "HashCode": -640671258,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Cliente.Clientes",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Cliente.Clientes"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 114463733,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Reporte.Reporte",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Reporte"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte"
-        }
-      },
-      {
-        "HashCode": -1343363026,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Reporte.Reporte",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Pages.Reporte.Reporte"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
       {
         "HashCode": 1249542740,
         "Kind": "Components.Component",
@@ -425,39 +108,6 @@
         }
       },
       {
-        "HashCode": -1118605737,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.LoginDisplay",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "LoginDisplay"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.LoginDisplay"
-        }
-      },
-      {
-        "HashCode": 729790800,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.LoginDisplay",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Shared.LoginDisplay"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.LoginDisplay",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1455897881,
         "Kind": "Components.Component",
         "Name": "Examen_Final.Shared.SurveyPrompt",
@@ -511,6 +161,39 @@
         }
       },
       {
+        "HashCode": -1118605737,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.LoginDisplay",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "LoginDisplay"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.LoginDisplay"
+        }
+      },
+      {
+        "HashCode": 729790800,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.LoginDisplay",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Shared.LoginDisplay"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.LoginDisplay",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -100529733,
         "Kind": "Components.Component",
         "Name": "Examen_Final.Shared.NavMenu",
@@ -540,6 +223,323 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Examen_Final.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -44509847,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Factura.Facturas",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Facturas"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas"
+        }
+      },
+      {
+        "HashCode": 1804512531,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Factura.Facturas",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Factura.Facturas"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Factura.Facturas",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -2038798739,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Factura.ViewFactura",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ViewFactura"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Factura.ViewFactura"
+        }
+      },
+      {
+        "HashCode": 380391676,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Factura.ViewFactura",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Factura.ViewFactura"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Factura.ViewFactura",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1953269425,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.ViewCliente",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ViewCliente"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.ViewCliente"
+        }
+      },
+      {
+        "HashCode": -2020041004,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.ViewCliente",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Cliente.ViewCliente"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.ViewCliente",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1257347574,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.Clientes",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Clientes"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes"
+        }
+      },
+      {
+        "HashCode": -640671258,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Cliente.Clientes",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Cliente.Clientes"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Cliente.Clientes",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 920480931,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Producto.Productos",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Productos"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Producto.Productos"
+        }
+      },
+      {
+        "HashCode": -340330087,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Producto.Productos",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Producto.Productos"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Producto.Productos",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1291209940,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Producto.ViewProducto",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ViewProducto"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto"
+        }
+      },
+      {
+        "HashCode": -593675984,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Producto.ViewProducto",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Producto.ViewProducto"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Producto.ViewProducto",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 114463733,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Reporte.Reporte",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Reporte"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte"
+        }
+      },
+      {
+        "HashCode": -1343363026,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Reporte.Reporte",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Reporte.Reporte"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -175132148,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Index",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Index"
+        }
+      },
+      {
+        "HashCode": -1952795237,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Pages.Index",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Pages.Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1070311947,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.App",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.App"
+        }
+      },
+      {
+        "HashCode": -1689137301,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.App",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15027,148 +15027,148 @@
   "RootNamespace": "Examen_Final",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\App.razor",
-      "TargetPath": "App.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\_Imports.razor",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Reporte\\Reporte.razor",
-      "TargetPath": "Pages\\Reporte\\Reporte.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Shared\\LoginDisplay.razor",
-      "TargetPath": "Shared\\LoginDisplay.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Producto\\ViewProducto.razor",
-      "TargetPath": "Pages\\Producto\\ViewProducto.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Factura\\ViewFactura.razor",
-      "TargetPath": "Pages\\Factura\\ViewFactura.razor",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Producto\\Productos.razor",
-      "TargetPath": "Pages\\Producto\\Productos.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Factura\\Facturas.razor",
-      "TargetPath": "Pages\\Factura\\Facturas.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Shared\\SurveyPrompt.razor",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Shared\\SurveyPrompt.razor",
       "TargetPath": "Shared\\SurveyPrompt.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\LogOut.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Cliente\\Clientes.razor",
-      "TargetPath": "Pages\\Cliente\\Clientes.razor",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Factura\\Facturas.razor",
+      "TargetPath": "Pages\\Factura\\Facturas.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\_Host.cshtml",
-      "TargetPath": "Pages\\_Host.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Reporte\\Mapa.cshtml",
-      "TargetPath": "Pages\\Reporte\\Mapa.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Cliente\\ViewCliente.razor",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Cliente\\ViewCliente.razor",
       "TargetPath": "Pages\\Cliente\\ViewCliente.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Shared\\NavMenu.razor",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Cliente\\Clientes.razor",
+      "TargetPath": "Pages\\Cliente\\Clientes.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Shared\\LoginDisplay.razor",
+      "TargetPath": "Shared\\LoginDisplay.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Producto\\Productos.razor",
+      "TargetPath": "Pages\\Producto\\Productos.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Shared\\_Layout.cshtml",
+      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Producto\\ViewProducto.razor",
+      "TargetPath": "Pages\\Producto\\ViewProducto.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\_Host.cshtml",
+      "TargetPath": "Pages\\_Host.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Reporte\\Reporte.razor",
+      "TargetPath": "Pages\\Reporte\\Reporte.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Index.razor",
+      "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Reporte\\Mapa.cshtml",
+      "TargetPath": "Pages\\Reporte\\Mapa.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Pages\\Factura\\ViewFactura.razor",
+      "TargetPath": "Pages\\Factura\\ViewFactura.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\Tienda\\Examen_Final\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
+      "FilePath": "c:\\Users\\luis_\\OneDrive\\Escritorio\\proyecto\\Tienda\\Examen_Final\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     }
   ],
