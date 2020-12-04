@@ -20,155 +20,162 @@
                 <div class="col-md-5">
                     <select class="form-control" @bind="selectorReporte">
                         <!--colocar id de consulta-->
-                        <option selected>Seleccione reporte</option>
+                        <option value="0" selected>Seleccione reporte</option>
                         <option value="1"> - Listado de productos</option>
                         <option value="2"> - Productos y servicios con mayor demanda</option>
                         <option value="3"> - Clientes con mayor frecuencia de compra</option>
                         <option value="4"> - Cuemplea&#241;os de los clientes</option>
                     </select>
                 </div>
+                @if(selectorReporte != "0" ){
+                <div class="d-flex flex-row-reverse">
+                    <button type="button" @onclick="Imprimir" class="btn btn-success  btn-lg">
+                        <span class="oi oi-print" aria-hidden="true"></span> Imprimir factura
+                    </button>
+                </div>
+                    }
 
                 @if (selectorReporte == "1")
                 {
-                    <div class="my-3" id="Imprimir_reporte">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h2>Listado de productos</h2>
+                <div class="my-3" id="Imprimir_reporte">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Listado de productos</h2>
 
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <p>@date</p>
-                            </div>
                         </div>
-                        <table class="tabla productos_th_color">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Descripci&#243;n</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (productos.Any())
+                        <div class="col-md-6 text-right">
+                            <p>@date</p>
+                        </div>
+                    </div>
+                    <table class="tabla productos_th_color">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripci&#243;n</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (productos.Any())
                                 {
-                                    @foreach (var producto in productos)
+                            @foreach (var producto in productos)
                                     {
-                                        <tr>
-                                            <td>@producto.Nombre</td>
-                                            <td>@producto.Descripcion</td>
-                                            <td>@producto.Precio</td>
-                                            <td>@producto.Cantidad</td>
-                                        </tr>
+                            <tr>
+                                <td>@producto.Nombre</td>
+                                <td>@producto.Descripcion</td>
+                                <td>@producto.Precio</td>
+                                <td>@producto.Cantidad</td>
+                            </tr>
                                     }
                                 }
                                 else
                                 {
-                                    <tr><td colspan="12"><strong>No hay productos registrados</strong></td></tr>
+                            <tr><td colspan="12"><strong>No hay productos registrados</strong></td></tr>
                                 }
-                            </tbody>
-                        </table>
-                        <div class="mt-4">
-                            <h4 class="text-center">Fin del reporte</h4>
-                        </div>
+                        </tbody>
+                    </table>
+                    <div class="mt-4">
+                        <h4 class="text-center">Fin del reporte</h4>
                     </div>
+                </div>
 
-                    <div class="text-right">
-                        <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
-                    </div>
+                @*<div class="text-right">
+            <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
+        </div>*@
 
                 }
                 @if (selectorReporte == "2")
                 {
 
-                    <div class="my-3" id="Imprimir_reporte">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h2>Productos m&#225;s vendidos</h2>
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <p>@date</p>
-                            </div>
+                <div class="my-3" id="Imprimir_reporte">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Productos m&#225;s vendidos</h2>
                         </div>
-                        <table class="tabla demanda_th_color">
-                            <thead>
-                                <tr>
+                        <div class="col-md-6 text-right">
+                            <p>@date</p>
+                        </div>
+                    </div>
+                    <table class="tabla demanda_th_color">
+                        <thead>
+                            <tr>
 
-                                    <th>Nombre</th>
-                                    <th>Descripci&#243;n</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
+                                <th>Nombre</th>
+                                <th>Descripci&#243;n</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                                @foreach (var factura in facturas)
+                            @foreach (var factura in facturas)
                                 {
-                                    @foreach (var item in factura.facturas_detalle.GroupBy(o => o.producto).OrderByDescending(g => g.Sum(oi => oi.Cantidad)))
+                            @foreach (var item in factura.facturas_detalle.GroupBy(o => o.producto).OrderByDescending(g => g.Sum(oi => oi.Cantidad)))
                                     {
-                                        @foreach (var data in item)
+                            @foreach (var data in item)
                                         {
-                                            <tr>
-                                                <td>@data.producto.Nombre</td>
-                                                <td>@data.producto.Descripcion</td>
-                                                <td>@data.producto.Precio</td>
-                                                <td>@data.Cantidad</td>
-                                            </tr>
+                            <tr>
+                                <td>@data.producto.Nombre</td>
+                                <td>@data.producto.Descripcion</td>
+                                <td>@data.producto.Precio</td>
+                                <td>@data.Cantidad</td>
+                            </tr>
                                         }
                                     }
                                 }
 
-                            </tbody>
-                        </table>
-                        <div class="mt-4">
-                            <h4 class="text-center">Fin del reporte</h4>
-                        </div>
+                        </tbody>
+                    </table>
+                    <div class="mt-4">
+                        <h4 class="text-center">Fin del reporte</h4>
                     </div>
-                    <div class="text-right">
-                        <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
-                    </div>
+                </div>
+                @*<div class="text-right">
+            <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
+        </div>*@
                 }
                 @if (selectorReporte == "3")
                 {
-                    @*@foreach(var factura in facturas.GroupBy(f=>f.Cliente.ClienteID).OrderByDescending(f => f.Max(facturas[0].facturas_detalle))){
+                @*@foreach(var factura in facturas.GroupBy(f=>f.Cliente.ClienteID).OrderByDescending(f => f.Max(facturas[0].facturas_detalle))){
 
-                        }*@
-                    <div class="my-3" id="Imprimir_reporte">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h2>Clientes que m&#225;s compran</h2>
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <p>@date</p>
-                            </div>
+        }*@
+                <div class="my-3" id="Imprimir_reporte">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Clientes que m&#225;s compran</h2>
                         </div>
-                        <table class="tabla frecuencia_th_color">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                        <div class="col-md-6 text-right">
+                            <p>@date</p>
+                        </div>
+                    </div>
+                    <table class="tabla frecuencia_th_color">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                                @foreach (var factura in facturas.GroupBy(o => o.ClienteID).ToList())
+                            @foreach (var factura in facturas.GroupBy(o => o.ClienteID).ToList())
                                 {
 
-                                    @foreach (var data in factura.GroupBy(i => i.ClienteID).Select(d => d.OrderByDescending(p => p.facturas_detalle.Sum(p1 => p1.producto.Precio * p1.Cantidad + p.facturas_detalle.Sum(p2 => p2.producto.Precio * p2.Cantidad * 0.18))).ToList()))
+                            @foreach (var data in factura.GroupBy(i => i.ClienteID).Select(d => d.OrderByDescending(p => p.facturas_detalle.Sum(p1 => p1.producto.Precio * p1.Cantidad + p.facturas_detalle.Sum(p2 => p2.producto.Precio * p2.Cantidad * 0.18))).ToList()))
                                     {
-                                        @foreach (var order in data)
+                            @foreach (var order in data)
                                         {
 
-                                            @foreach (var detalle in order.facturas_detalle)
+                            @foreach (var detalle in order.facturas_detalle)
                                             {
-                                                <tr>
-                                                    <td>@order.Cliente.Nombres</td>
-                                                    <td>@order.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + order.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))                                                                                                                </td>
+                            <tr>
+                                <td>@order.Cliente.Nombres</td>
+                                <td>@order.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + order.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))                                                                                                                </td>
 
-                                                    @*@data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p1 => detalle.producto.Precio * detalle.Cantidad + data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p2 => detalle.producto.Precio * detalle.producto.Cantidad * 0.18))*@
+                                @*@data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p1 => detalle.producto.Precio * detalle.Cantidad + data.Where(f => f.ClienteID == order.Cliente.ClienteID).Sum(p2 => detalle.producto.Precio * detalle.producto.Cantidad * 0.18))*@
 
-                                                </tr>
+                            </tr>
                                             }
 
                                         }
@@ -178,67 +185,67 @@
 
                                 }
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="text-right">
-                        <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
-                    </div>
+                        </tbody>
+                    </table>
+                </div>
+                @*<div class="text-right">
+            <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
+        </div>*@
                 }
                 @if (selectorReporte == "4")
                 {
 
-                    <div class="my-3" id="Imprimir_reporte">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h2>Cumplea&#241;os de clientes</h2>
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <p>@date</p>
-                            </div>
+                <div class="my-3" id="Imprimir_reporte">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Cumplea&#241;os de clientes</h2>
                         </div>
-                        <table class="tabla cumpleanos_th_color">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>RNC o c&#233;dula</th>
-                                    <th>Direcci&#243;n</th>
-                                    <th>Tel&#233;fono</th>
-                                    <th>Correo</th>
-                                    <th>Fecha de cumplea&#241;os</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (clientes.Any())
+                        <div class="col-md-6 text-right">
+                            <p>@date</p>
+                        </div>
+                    </div>
+                    <table class="tabla cumpleanos_th_color">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>RNC o c&#233;dula</th>
+                                <th>Direcci&#243;n</th>
+                                <th>Tel&#233;fono</th>
+                                <th>Correo</th>
+                                <th>Fecha de cumplea&#241;os</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (clientes.Any())
                                 {
-                                    @foreach (var cliente in clientes.OrderBy(f => f.Fecha_nacimiento.Month).OrderBy(f => f.Fecha_nacimiento.Day))
+                            @foreach (var cliente in clientes.OrderByDescending(f => f.Fecha_nacimiento.Month).OrderByDescending(f => f.Fecha_nacimiento.Day))
                                     {
 
-                                        <tr>
-                                            <td>@cliente.Nombres</td>
-                                            <td>@cliente.Rnc</td>
-                                            <td>@cliente.Direccion</td>
-                                            <td>@cliente.Telefono</td>
-                                            <td>@cliente.Correo</td>
-                                            <td>@cliente.Fecha_nacimiento.ToString("dd/MM/yyyy")</td>
+                            <tr>
+                                <td>@cliente.Nombres</td>
+                                <td>@cliente.Rnc</td>
+                                <td>@cliente.Direccion</td>
+                                <td>@cliente.Telefono</td>
+                                <td>@cliente.Correo</td>
+                                <td>@cliente.Fecha_nacimiento.ToString("dd/MM/yyyy")</td>
 
-                                        </tr>
+                            </tr>
 
                                     }
                                 }
                                 else
                                 {
-                                    <tr><td colspan="12"><strong>No hay clientes registrados</strong></td></tr>
+                            <tr><td colspan="12"><strong>No hay clientes registrados</strong></td></tr>
                                 }
-                            </tbody>
-                        </table>
-                        <div class="mt-4">
-                            <h4 class="text-center">Fin del reporte</h4>
-                        </div>
+                        </tbody>
+                    </table>
+                    <div class="mt-4">
+                        <h4 class="text-center">Fin del reporte</h4>
                     </div>
-                    <div class="text-right">
-                        <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
-                    </div>
+                </div>
+                @*<div class="text-right">
+            <button class="btn btn-light" @onclick="Imprimir">Imprimir</button>
+        </div>*@
                 }
             </div>
         </div>
@@ -268,6 +275,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        selectorReporte="0";
         await Refresh();
     }
 

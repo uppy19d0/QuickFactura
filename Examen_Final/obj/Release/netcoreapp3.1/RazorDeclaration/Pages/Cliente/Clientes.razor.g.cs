@@ -27,13 +27,6 @@ using Microsoft.AspNetCore.Authorization;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
-using Microsoft.AspNetCore.Components.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 4 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
@@ -98,6 +91,13 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
 #nullable restore
 #line 11 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Cliente\Clientes.razor"
+using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Cliente\Clientes.razor"
 using Examen_Final.Data;
 
 #line default
@@ -112,7 +112,7 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 189 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Cliente\Clientes.razor"
+#line 193 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Cliente\Clientes.razor"
        
     public string name_search;
     Usuario usuario1;
@@ -122,8 +122,22 @@ using Examen_Final.Data;
 
     protected override async Task OnInitializedAsync()
     {
-        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+        await GetClaimsPrincipalData();
         await Refresh();
+    }
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+          name_search=user.Identity.Name;
+        }
+        else
+        {
+            
+        }
     }
     private void Navegar(Cliente cliente)
     {
@@ -160,6 +174,7 @@ using Examen_Final.Data;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpContextAccessor httpContextAccessor { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UserManager<Usuario> UserManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignInManager<Usuario> SignInManager { get; set; }

@@ -15,6 +15,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Examen_Final.Areas.Identity;
 using Examen_Final.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Examen_Final
 {
@@ -23,11 +26,13 @@ namespace Examen_Final
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddDbContext<ApplicationDbContext>(options =>
                       options.UseSqlite("Data Source=tienda.db"));
             services.AddDefaultIdentity<Usuario>(options => options.SignIn.RequireConfirmedAccount = false)
@@ -44,6 +49,8 @@ namespace Examen_Final
                 setupAction.SignIn.RequireConfirmedPhoneNumber = false;
             });
             services.AddRazorPages();
+            services.AddHttpContextAccessor();
+            services.AddScoped<HttpContextAccessor>();
             services.AddScoped<ServiceUsuario>();
             services.AddScoped<ServiceCliente>();
             services.AddScoped<ServiceFactura>();

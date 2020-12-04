@@ -12,35 +12,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1070311947,
+        "HashCode": 114463733,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
+        "Name": "Examen_Final.Pages.Reporte.Reporte",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "Reporte"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App"
+          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte"
         }
       },
       {
-        "HashCode": -1689137301,
+        "HashCode": -1343363026,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.App",
+        "Name": "Examen_Final.Pages.Reporte.Reporte",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Examen_Final.App"
+            "TagName": "Examen_Final.Pages.Reporte.Reporte"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.App",
+          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -296,35 +296,88 @@
         }
       },
       {
-        "HashCode": 114463733,
+        "HashCode": -1455897881,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Reporte.Reporte",
+        "Name": "Examen_Final.Shared.SurveyPrompt",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Reporte"
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte"
+          "Common.TypeName": "Examen_Final.Shared.SurveyPrompt"
         }
       },
       {
-        "HashCode": -1343363026,
+        "HashCode": 289598920,
         "Kind": "Components.Component",
-        "Name": "Examen_Final.Pages.Reporte.Reporte",
+        "Name": "Examen_Final.Shared.SurveyPrompt",
         "AssemblyName": "Examen_Final",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Examen_Final.Pages.Reporte.Reporte"
+            "TagName": "Examen_Final.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Pages.Reporte.Reporte",
+          "Common.TypeName": "Examen_Final.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -100529733,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.NavMenu",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -1410552635,
+        "Kind": "Components.Component",
+        "Name": "Examen_Final.Shared.NavMenu",
+        "AssemblyName": "Examen_Final",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Examen_Final.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Examen_Final.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -454,92 +507,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Examen_Final.Shared.LoginDisplay",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1455897881,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.SurveyPrompt",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": 289598920,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.SurveyPrompt",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -100529733,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.NavMenu",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1410552635,
-        "Kind": "Components.Component",
-        "Name": "Examen_Final.Shared.NavMenu",
-        "AssemblyName": "Examen_Final",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Examen_Final.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Examen_Final.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

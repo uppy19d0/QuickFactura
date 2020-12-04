@@ -13,99 +13,99 @@ namespace Examen_Final.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 1 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 2 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
-using Microsoft.AspNetCore.Components.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 4 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 5 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 6 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 7 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 8 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Examen_Final;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 9 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Examen_Final.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 10 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 12 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using BlazorInputFile;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
+#line 13 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Examen_Final.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
+#line 1 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
 using Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
+#line 2 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
 using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
+using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
@@ -118,14 +118,30 @@ using Microsoft.AspNetCore.Identity;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
+#line 25 "c:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
        
     public string name_search;
     Usuario usuario1;
-    protected override async Task OnInitializedAsync()
-    {
-        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+
+     protected override async Task OnInitializedAsync()
+    {       
+        await GetClaimsPrincipalData();
         await Refresh();
+    
+    }
+      private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+          name_search=user.Identity.Name;
+        }
+        else
+        {
+            
+        }
     }
     private async Task Refresh()
     {
@@ -136,6 +152,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpContextAccessor httpContextAccessor { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UserManager<Usuario> UserManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignInManager<Usuario> SignInManager { get; set; }

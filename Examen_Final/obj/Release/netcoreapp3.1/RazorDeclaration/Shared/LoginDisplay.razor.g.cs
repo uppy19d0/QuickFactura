@@ -27,13 +27,6 @@ using Microsoft.AspNetCore.Authorization;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
-using Microsoft.AspNetCore.Components.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 4 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
@@ -110,6 +103,13 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
+using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
     public partial class LoginDisplay : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -118,14 +118,30 @@ using Microsoft.AspNetCore.Identity;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
+#line 25 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Shared\LoginDisplay.razor"
        
     public string name_search;
     Usuario usuario1;
-    protected override async Task OnInitializedAsync()
-    {
-        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+
+     protected override async Task OnInitializedAsync()
+    {       
+        await GetClaimsPrincipalData();
         await Refresh();
+    
+    }
+      private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+          name_search=user.Identity.Name;
+        }
+        else
+        {
+            
+        }
     }
     private async Task Refresh()
     {
@@ -136,6 +152,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpContextAccessor httpContextAccessor { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UserManager<Usuario> UserManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignInManager<Usuario> SignInManager { get; set; }

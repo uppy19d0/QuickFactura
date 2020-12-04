@@ -10,8 +10,9 @@
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
 @inject IHttpContextAccessor httpContextAccessor
-
-<AuthorizeView>
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<AuthorizeView Context="authContext4">
     <Authorized>
         <div class="d-flex flex-row-reverse">
             <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-target="#exampleModalLong">
@@ -36,25 +37,23 @@
                 <tbody>
                     @if (facturas.Where(f => f.UsuarioID == usuario1.Id).ToList().Any())
                     {
-                        @foreach (var factura in facturas.Where(f => f.UsuarioID == usuario1.Id).ToList())
+                    @foreach (var factura in facturas.Where(f => f.UsuarioID == usuario1.Id).ToList())
                         {
                     <tr>
                         <td>@factura.Fecha</td>
                         @if (factura.Cancelada)
                         {
-                            <td>Cancelada</td>
+                        <td>Cancelada</td>
                         }
                         else
                         {
-                            <td>Valida</td>
+                        <td>Valida</td>
                         }
-                        
-
                         <td>@factura.Cliente.Nombres</td>
                         <td>@factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad)</td>
                         <td>@factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18)</td>
                         <td>@factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad + factura.facturas_detalle.Sum(p => p.producto.Precio * p.Cantidad * 0.18))</td>
-                        <td><button class="btn btn-primary" @onclick="(() => Navegar(factura))">View</button></td>
+                        <td><button class="btn btn-primary" @onclick="(() => Navegar(factura))">Ver</button></td>
                         <td>
                             <button class="btn btn-info" data-toggle="modal" data-target="#editexampleModalLong" @onclick="(() => SetFacturaForUpdate(factura))">Editar</button>
                             @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
@@ -65,7 +64,7 @@
                     }
                     else
                     {
-                        <tr><td colspan="6"><strong>No hay factura creado</strong></td></tr>
+                    <tr><td colspan="6"><strong>No hay factura creado</strong></td></tr>
                     }
                 </tbody>
             </table>
@@ -83,16 +82,16 @@
                     <div class="modal-body">
                         <div class="col-md-10 mx-auto py-4">
 
-                            <form Model=" @NewFactura">
+                            <EditForm Model="@NewFactura">
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for="">Clientes:</label>
                                         <select id="customer" class="form-control" placeholder="Cliente" @bind="@NewFactura.ClienteID">
                                             @foreach (var cliente in clientes)
                                             {
-                                                <option value="@cliente.ClienteID">
-                                                    @cliente.Nombres
-                                                </option>
+                                            <option value="@cliente.ClienteID">
+                                                @cliente.Nombres 
+                                            </option>
                                             }
                                         </select>
                                     </div>
@@ -122,31 +121,31 @@
                                 {
                                     var indice = i;
                                     var producto = @NewFactura.facturas_detalle[i];
-                                    <h5>Producto o Servicio @(i+1)</h5>
+                                <h5>Producto o Servicio @(i+1)</h5>
 
-                                    <select id="producto" class="form-control" placeholder="Productos" @bind="producto.ProductoID">
-                                        @foreach (var producto1 in productos)
+                                <select id="producto" class="form-control" placeholder="Productos" @bind="producto.ProductoID">
+                                    @foreach (var producto1 in productos)
                                         {
-                                            <option value="@producto1.ProductoID">
-                                                @producto1.Nombre
-                                            </option>
+                                    <option value="@producto1.ProductoID">
+                                        @producto1.Nombre (@producto1.Cantidad)
+                                    </option>
                                         }
-                                    </select>
-                                    <div class="form-group">
-                                        <label>Cantidad:</label>
-                                        <input class="form-control" type="text" @bind-value="producto.Cantidad" />
-                                    </div>
+                                </select>
+                                <div class="form-group">
+                                    <label>Cantidad:</label>
+                                    <input class="form-control" type="text" @bind-value="producto.Cantidad" />
+                                </div>
 
-                                    <button type="button" class="btn btn-danger"
-                                            @onclick="@(() => NewFactura.facturas_detalle.RemoveAt(indice))">
-                                        Borrar
-                                    </button>
+                                <button type="button" class="btn btn-danger"
+                                        @onclick="@(() => NewFactura.facturas_detalle.RemoveAt(indice))">
+                                    Borrar
+                                </button>
                                 }
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="AddNewFactura"> Agregar </button>
+                                    <button class="btn btn-info" @onclick="AddNewFactura" data-dismiss="modal"> Agregar </button>
                                 </div>
-                            </form>
+                            </EditForm>
                         </div>
                     </div>
                 </div>
@@ -166,19 +165,25 @@
 
                     <div class="modal-body">
                         <div class="col-md-10 mx-auto py-4">
-                            <form Model="@FacturaUpdate">
-                                <div class="d-flex flex-row-reverse">
-                                    <label for="servicio">Status:@status_invoices</label>
+                            <EditForm Model="@FacturaUpdate">
+                                <label class="checkbox-inline">
                                     <input type="checkbox" id="servicio" class="form-control" @bind="@FacturaUpdate.Cancelada" />
-                                </div>
+                                    Status
+                                    @if(FacturaUpdate.Cancelada){
+                                    <b>  Cancelada</b>
+                                           }
+                                           else{
+                                    <b> Activada</b>
+                                           }
+                                </label>
                                 <div class="form-group col-md-6">
                                     <label for="">Clientes:</label>
                                     <select id="customer" class="form-control" placeholder="Cliente" @bind="@FacturaUpdate.ClienteID">
                                         @foreach (var cliente in clientes)
                                         {
-                                            <option value="@cliente.ClienteID">
-                                                @cliente.Nombres
-                                            </option>
+                                        <option value="@cliente.ClienteID">
+                                            @cliente.Nombres
+                                        </option>
                                         }
                                     </select>
                                 </div>
@@ -188,58 +193,40 @@
                                     var indice = i;
                                     var producto = @FacturaUpdate.facturas_detalle[i];
 
-                                    <h5>Producto y Servicio @(i+1)</h5>
+                                <h5>Producto y Servicio @(i+1)</h5>
 
-                                    <select id="producto" class="form-control" placeholder="Productos">
-                                        @foreach (var producto1 in productos)
+                                <select id="producto" class="form-control" placeholder="Productos">
+                                    @foreach (var producto1 in productos)
                                         {
-                                            <option value="@producto1.ProductoID">
-                                                @producto1.Nombre (@producto1.Cantidad)
-                                            </option>
+                                    <option value="@producto1.ProductoID">
+                                        @producto1.Nombre (@producto1.Cantidad)
+                                    </option>
 
                                         }
-                                    </select>
-                                    <div class="form-group">
-                                        <label>Cantidad:</label>
-                                        @*<h5>Demasiado producto solo tenemos</h5>*@
-                                        <input class="form-control" type="text" @bind-value="producto.Cantidad" />
-                                    </div>
+                                </select>
+                                <div class="form-group">
+                                    <label>Cantidad:</label>
+
+                                    <input class="form-control" type="text" @bind-value="producto.Cantidad" />
+                                </div>
                                     if (FacturaUpdate.facturas_detalle.Count >= 2)
                                     {
-                                        <button type="button" class="btn btn-danger"
-                                                @onclick="@(() => NewFactura.facturas_detalle.RemoveAt(indice))">
-                                            Borrar
-                                        </button>
+                                <button type="button" class="btn btn-danger"
+                                        @onclick="@(() => NewFactura.facturas_detalle.RemoveAt(indice))">
+                                    Borrar
+                                </button>
                                     }
                                     else
                                     {
 
                                     }
-
-                            <!--<div class="form-group">
-                                <label>ITBIS:</label>
-                                
-                            </div>-->
-                                    @*<div class="form-group">
-                                            <label>SubTotal:</label>
-                                            @if (producto.producto != null)
-                                            {
-                                                @subtotal
-                                            }
-
-                                        </div>*@
-                                    <!--<div class="form-group">
-                                        <label>Total:</label>
-                                  
-
-                                    </div>-->
                                 }
 
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="UpdateFacturaData"> Editar Factura </button>
+                                    <button class="btn btn-info" @onclick="UpdateFacturaData" data-dismiss="modal"> Editar Factura </button>
                                 </div>
-                            </form>
+                            </EditForm>
                         </div>
                     </div>
                 </div>
@@ -276,9 +263,23 @@
 
     protected override async Task OnInitializedAsync()
     {
-        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+        await GetClaimsPrincipalData();
         await Refresh();
         NewFactura.Fecha = DateTime.Now;
+    }
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+          name_search=user.Identity.Name;
+        }
+        else
+        {
+
+        }
     }
     private void Navegar(Factura factura)
     {

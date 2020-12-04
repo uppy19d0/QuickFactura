@@ -36,8 +36,18 @@ C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Productos\hey (2).png
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Productos\papeleria1.png
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Productos\Un libro al día mantiene el nivel de locura en óptimas condiciones. (2).mp4
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\publish\web.config
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\web.config
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\appsettings.Development.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\appsettings.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\Examen_Final.deps.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\Examen_Final.runtimeconfig.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\publish\appsettings.Development.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\publish\appsettings.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\publish\Examen_Final.deps.json
+C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\publish\publish\Examen_Final.runtimeconfig.json
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\Examen_Final.dll
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\Examen_Final.runtimeconfig.json
 C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\obj\Release\netcoreapp3.1\PubTmp\Out\Examen_Final.pdb

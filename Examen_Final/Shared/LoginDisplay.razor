@@ -6,6 +6,8 @@
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
 @inject IHttpContextAccessor httpContextAccessor
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <AuthorizeView>
     <Authorized>
@@ -23,10 +25,26 @@
 @code {
     public string name_search;
     Usuario usuario1;
-    protected override async Task OnInitializedAsync()
-    {
-        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+
+     protected override async Task OnInitializedAsync()
+    {       
+        await GetClaimsPrincipalData();
         await Refresh();
+    
+    }
+      private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+          name_search=user.Identity.Name;
+        }
+        else
+        {
+            
+        }
     }
     private async Task Refresh()
     {

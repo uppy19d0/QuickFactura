@@ -8,9 +8,11 @@
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
 @inject IHttpContextAccessor httpContextAccessor
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @using Examen_Final.Data
 
-<AuthorizeView>
+<AuthorizeView Context="authContext2">
     <Authorized>
         <div class="d-flex flex-row-reverse">
             <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-target="#exampleModalLong">
@@ -27,15 +29,16 @@
                         <th>Dirección</th>
                         <th>Latitud</th>
                         <th>Longitud</th>
-                        <th>Teléfono</th>
+                        <th>Tel&#233;fono</th>
                         <th>Correo</th>
+                        <th>Fecha de Cumplea&#241;os</th>
                         <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (clientes.Any())
                     {
-                        @foreach (var cliente in clientes)
+                    @foreach (var cliente in clientes)
                         {
                     <tr>
                         <td>@cliente.Nombres</td>
@@ -45,6 +48,7 @@
                         <td>@cliente.Long</td>
                         <td>@cliente.Telefono</td>
                         <td>@cliente.Correo</td>
+                        <td>@cliente.Fecha_nacimiento.ToString("dd/MM/yyyy")</td>
                         <td>
                             <button class="btn btn-info" data-toggle="modal" data-target="#editexampleModalLong" @onclick="(() => SetClienteForUpdate(cliente))">Editar</button>
                             @* <button class="btn btn-danger" @onclick="(() => DeleteSecreto(secreto))">Eliminar</button> *@
@@ -55,13 +59,13 @@
                     }
                     else
                     {
-                        <tr><td colspan="6"><strong>No existen clientes registrados</strong></td></tr>
+                    <tr><td colspan="6"><strong>No existen clientes registrados</strong></td></tr>
                     }
                 </tbody>
             </table>
         </div>
 
-       @* MODAL Crear*@
+        @* MODAL Crear*@
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -70,29 +74,29 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>   
-                     <div class="modal-body">
+                    </div>
+                    <div class="modal-body">
                         <div class="col-md-10 mx-auto py-4">
                             <form Model="@NewCliente">
                                 <div class="form-group">
                                     <label for="titulo">Nombre</label>
                                     <input type="text" id="titulo" class="form-control" @bind="@NewCliente.Nombres" required />
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label for="rnc">RNC</label>
                                     <textarea type="text" id="rnc" class="form-control" @bind="@NewCliente.Rnc" required />
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                     <input type="date" id="fecha_nacimiento" class="form-control" @bind="@NewCliente.Fecha_nacimiento" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="latitud">Latitud</label>
-                                    <input type="number" id="latitud" class="form-control" @bind="@NewCliente.Lat" required />
+                                    <input type="text" id="latitud" class="form-control" @bind="@NewCliente.Lat" required />
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label for="longitud">Longitud</label>
-                                    <input type="number" id="longitud" class="form-control" @bind="@NewCliente.Long" required />
+                                    <input type="text" id="longitud" class="form-control" @bind="@NewCliente.Long" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="telefono">Telefono</label>
@@ -108,7 +112,7 @@
                                 </div>
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="AddNewCliente"  data-dismiss="modal"> Agregar </button>
+                                    <button class="btn btn-info" @onclick="AddNewCliente" data-dismiss="modal"> Agregar </button>
                                 </div>
                             </form>
                         </div>
@@ -118,7 +122,7 @@
         </div>
 
         @* MODAL Editar*@
-         <div class="modal fade" id="editexampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="editexampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -126,29 +130,29 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>   
-                     <div class="modal-body">
+                    </div>
+                    <div class="modal-body">
                         <div class="col-md-10 mx-auto py-4">
-                            <form>
+                            <form Model="@UpdateCliente">
                                 <div class="form-group">
                                     <label for="titulo">Nombre</label>
                                     <input type="text" id="titulo" class="form-control" @bind="@UpdateCliente.Nombres" required />
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label for="rnc">RNC</label>
                                     <textarea type="text" id="rnc" class="form-control" @bind="@UpdateCliente.Rnc" required />
                                 </div>
-                                 <div class="form-group">
-                                      <label for="fecha_nacimiento">Fecha de nacimiento</label>
-                                      <input type="date" id="fecha_nacimiento" class="form-control" @bind="@NewCliente.Fecha_nacimiento" required />
-                                  </div>
+                                <div class="form-group">
+                                    <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                                    <input type="date" id="fecha_nacimiento" class="form-control" @bind="@UpdateCliente.Fecha_nacimiento" required />
+                                </div>
                                 <div class="form-group">
                                     <label for="latitud">Latitud</label>
-                                    <input type="number" id="latitud" class="form-control" @bind="@UpdateCliente.Lat" required />
+                                    <input type="text" id="latitud" class="form-control" @bind="@UpdateCliente.Lat" required />
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label for="longitud">Longitud</label>
-                                    <input type="number" id="longitud" class="form-control" @bind="@UpdateCliente.Long" required />
+                                    <input type="text" id="longitud" class="form-control" @bind="@UpdateCliente.Long" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="telefono">Telefono</label>
@@ -164,16 +168,16 @@
                                 </div>
 
                                 <div class="text-center p-3 mb-3">
-                                    <button class="btn btn-info" @onclick="EditarCliente"  data-dismiss="modal"> Editar </button>
+                                    <button class="btn btn-info" @onclick="EditarCliente" data-dismiss="modal"> Editar </button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
 
-        </Authorized>
+    </Authorized>
     <NotAuthorized>
         <center>
             <h1>Necesitas estar logeado</h1>
@@ -195,8 +199,22 @@
 
     protected override async Task OnInitializedAsync()
     {
-        name_search = httpContextAccessor.HttpContext.User.Identity.Name;
+        await GetClaimsPrincipalData();
         await Refresh();
+    }
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+          name_search=user.Identity.Name;
+        }
+        else
+        {
+            
+        }
     }
     private void Navegar(Cliente cliente)
     {

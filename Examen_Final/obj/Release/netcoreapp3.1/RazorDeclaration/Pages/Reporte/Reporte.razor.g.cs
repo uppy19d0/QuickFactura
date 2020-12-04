@@ -112,7 +112,7 @@ using Examen_Final.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 257 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Reporte\Reporte.razor"
+#line 264 "C:\Users\luis_\OneDrive\Escritorio\Tienda\Examen_Final\Pages\Reporte\Reporte.razor"
       
 
     DateTime date = DateTime.Now;
@@ -127,6 +127,7 @@ using Examen_Final.Data;
 
     protected override async Task OnInitializedAsync()
     {
+        selectorReporte="0";
         await Refresh();
     }
 
